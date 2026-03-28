@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
-  <!-- Адаптация для всех устройств -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-  <meta name="description" content="Unknown Northern Russia — детализированная карта Русского Севера для Euro Truck Simulator 2. Города, дороги, уникальные грузы. Бета-доступ.">
-  <meta name="keywords" content="ETS2, мод, карта, Русский Север, Unknown Northern Russia, грузовики, симулятор">
-  <!-- Только тёмная тема -->
+  <meta name="description" content="Unknown Northern Russia — детализированная карта Русского Севера для Euro Truck Simulator 2. Уникальные города, сложные трассы, реалистичные грузы. Бета-доступ и постоянные обновления.">
+  <meta name="keywords" content="ETS2, мод, карта, Русский Север, Unknown Northern Russia, грузовики, симулятор, скачать мод">
   <meta name="theme-color" content="#0a192f">
   <meta name="color-scheme" content="dark">
-
-  <title>UNR | Unknown Northern Russia — мод для ETS2</title>
-
-  <!-- Фавикон с поддержкой темы -->
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" sizes="any">
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-
-  <!-- Предзагрузка критических ресурсов -->
+  <meta property="og:title" content="UNR | Unknown Northern Russia — мод для ETS2">
+  <meta property="og:description" content="Исследуйте суровые просторы Русского Севера. Масштабная карта, уникальные грузы и атмосфера.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/0a192f/64ffda?text=UNR+ETS2">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>UNR | Unknown Northern Russia — мод для Euro Truck Simulator 2</title>
+  
+  <!-- Favicon (inline svg на случай отсутствия файлов) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a192f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%2364ffda' font-family='monospace'%3E🚚%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a192f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%2364ffda'%3E🚚%3C/text%3E%3C/svg%3E">
+  
+  <!-- Предзагрузка критических шрифтов -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-  <!-- Шрифты с отложенной загрузкой -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap">
-  </noscript>
-
-  <!-- Font Awesome с отложенной загрузкой -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </noscript>
-
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+  
   <style>
-    /* ===== ПОЛНЫЙ ОПТИМИЗИРОВАННЫЙ CSS ===== */
-    /* ===== ПЕРЕМЕННЫЕ (только тёмная тема) ===== */
+    /* ===== ПОЛНОСТЬЮ ОПТИМИЗИРОВАННЫЙ CSS ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
     
     :root {
       --color-primary: #0a192f;
       --color-secondary: #112240;
       --color-accent: #64ffda;
-      --color-accent-dark: #52d1b2;
+      --color-accent-dark: #4fc3b0;
       --color-text: #e6f1ff;
       --color-text-secondary: #8892b0;
       --color-bg: #020c1b;
@@ -59,50 +58,24 @@
       --radius-md: 12px;
       --radius-lg: 20px;
       --radius-xl: 30px;
-      --transition-fast: 0.15s ease;
-      --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       --container-padding: clamp(1rem, 5vw, 2rem);
-      --section-spacing: clamp(3rem, 10vw, 6rem);
+      --section-spacing: clamp(3rem, 8vw, 6rem);
       --header-height: 70px;
     }
-    /* ===== СБРОС И БАЗОВЫЕ СТИЛИ ===== */
     
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-    
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-      height: 100%;
-    }
-    
+    html { scroll-behavior: smooth; font-size: 16px; height: 100%; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
       min-height: 100vh;
       overflow-x: hidden;
     }
-    /* Фоновый эффект (только тёмный) */
     
+    /* Фоновый эффект (северное сияние) */
     .aurora-bg {
       position: fixed;
       top: 0;
@@ -112,1701 +85,323 @@
       pointer-events: none;
       z-index: -2;
       opacity: 0.12;
-      will-change: transform;
-      background: radial-gradient(circle at 20% 50%, rgba(100, 255, 218, 0.12) 0%, transparent 55%), radial-gradient(circle at 80% 20%, rgba(137, 146, 176, 0.07) 0%, transparent 55%), radial-gradient(circle at 40% 80%, rgba(17, 34, 64, 0.15) 0%, transparent 55%);
-    }
-    /* ===== ТИПОГРАФИКА ===== */
-    
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--color-text);
-      text-wrap: balance;
-    }
-    
-    h1 {
-      font-size: clamp(2rem, 8vw, 4rem);
-      background: linear-gradient(135deg, #ffffff, var(--color-accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1rem;
-    }
-    
-    h2 {
-      font-size: clamp(1.75rem, 6vw, 3rem);
-      margin-bottom: 1.5rem;
-    }
-    
-    p {
-      margin-bottom: 1rem;
-      color: var(--color-text-secondary);
-    }
-    
-    a {
-      color: var(--color-accent);
-      text-decoration: none;
-      transition: color var(--transition-fast);
-    }
-    
-    a:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-      border-radius: 2px;
-    }
-    /* ===== КОНТЕЙНЕРЫ ===== */
-    
-    .container {
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 var(--container-padding);
-    }
-    
-    .section {
-      padding: var(--section-spacing) 0;
-      position: relative;
-    }
-    /* ===== СЕТКИ ===== */
-    
-    .grid {
-      display: grid;
-      gap: 2rem;
-    }
-    
-    .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
-    }
-    
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-    }
-    
-    .grid-4 {
-      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
-    }
-    /* ===== НАВИГАЦИЯ ===== */
-    
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(10, 25, 47, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--color-border);
-      transition: background var(--transition-normal), padding var(--transition-normal);
-      height: var(--header-height);
-    }
-    
-    .navbar.scrolled {
-      padding: 0.25rem 0;
-      background: rgba(10, 25, 47, 0.98);
-    }
-    
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%;
-      padding: 0 var(--container-padding);
-      flex-wrap: wrap;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--color-text);
-      z-index: 1002;
-    }
-    
-    .logo-icon {
-      color: var(--color-accent);
-      font-size: 2rem;
-      filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.5));
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-    
-    .nav-link {
-      color: var(--color-text-secondary);
-      font-weight: 500;
-      padding: 0.5rem 0;
-      position: relative;
-      transition: color var(--transition-fast);
-      white-space: nowrap;
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--color-accent);
-      transition: width var(--transition-normal);
-    }
-    
-    .nav-link:hover,
-    .nav-link:focus-visible {
-      color: var(--color-text);
-    }
-    
-    .nav-link:hover::after,
-    .nav-link.active::after,
-    .nav-link[aria-current="page"]::after {
-      width: 100%;
-    }
-    
-    .nav-link.active,
-    .nav-link[aria-current="page"] {
-      color: var(--color-text);
-    }
-    
-    .mobile-menu-btn {
-      display: none;
-      background: transparent;
-      border: none;
-      color: var(--color-text);
-      font-size: 1.75rem;
-      cursor: pointer;
-      padding: 0.75rem;
-      border-radius: var(--radius-sm);
-      transition: background var(--transition-fast);
-      z-index: 1002;
-      min-width: 48px;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .mobile-menu-btn:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
-    /* ===== ГЕРОЙ ===== */
-    
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding-top: var(--header-height);
-    }
-    
-    .hero-content {
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .hero-subtitle {
-      font-size: clamp(1.1rem, 4vw, 1.5rem);
-      color: var(--color-text-secondary);
-      margin-bottom: 2rem;
-    }
-    
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: clamp(1.5rem, 5vw, 3rem);
-      flex-wrap: wrap;
-      margin: 3rem 0;
-    }
-    
-    .stat-item {
-      text-align: center;
-    }
-    
-    .stat-number {
-      font-size: clamp(2rem, 6vw, 2.5rem);
-      font-weight: 800;
-      color: var(--color-accent);
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 0.25rem;
-    }
-    
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--color-text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    /* ===== КНОПКИ ===== */
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1rem 2rem;
-      border-radius: var(--radius-md);
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
-      border: none;
-      outline: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      min-height: 50px;
-      position: relative;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    
-    .btn-primary {
-      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-      color: var(--color-primary);
-      box-shadow: var(--shadow-glow);
-    }
-    
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(100, 255, 218, 0.5);
-    }
-    
-    .btn-secondary {
-      background: transparent;
-      color: var(--color-text);
-      border: 2px solid var(--color-border);
-    }
-    
-    .btn-secondary:hover,
-    .btn-secondary:focus-visible {
-      border-color: var(--color-accent);
-      color: var(--color-accent);
-      transform: translateY(-2px);
-    }
-    
-    .btn-large {
-      padding: 1.25rem 2.5rem;
-      font-size: 1.1rem;
-    }
-    
-    .btn-group {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    /* ===== КАРТОЧКИ (общие) ===== */
-    
-    .card {
-      background: var(--color-card);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      border: 1px solid var(--color-border);
-      transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .card-icon {
-      font-size: 2.5rem;
-      color: var(--color-accent);
-      margin-bottom: 1.5rem;
-      display: inline-block;
-    }
-    
-    @media (hover: hover) {
-      .card:hover {
-        transform: translateY(-6px);
-        border-color: var(--color-accent);
-        box-shadow: var(--shadow-lg), var(--shadow-glow);
-      }
-    }
-    /* ===== ГАЛЕРЕЯ ===== */
-    
-    .gallery-section {
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-bg) 100%);
-    }
-    
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .gallery-item {
-      position: relative;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      aspect-ratio: 16/9;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: border-color var(--transition-fast), transform var(--transition-fast);
-    }
-    
-    .gallery-item:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-    }
-    
-    .gallery-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      will-change: transform;
-    }
-    
-    .gallery-item:hover .gallery-img {
-      transform: scale(1.03);
-    }
-    /* ===== МОДАЛЬНОЕ ОКНО ===== */
-    
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(2, 12, 27, 0.98);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.2s;
-      padding: 1rem;
-    }
-    
-    .modal-overlay.active {
-      display: flex;
-      opacity: 1;
-    }
-    
-    .modal-content {
-      width: 100%;
-      max-width: 1200px;
-      max-height: 90vh;
-      position: relative;
-    }
-    
-    .modal-image {
-      width: 100%;
-      max-height: 75vh;
-      object-fit: contain;
-      border-radius: var(--radius-md) var(--radius-md) 0 0;
-    }
-    
-    .modal-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      background: var(--color-card);
-      border-radius: 0 0 var(--radius-md) var(--radius-md);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    
-    .modal-nav {
-      display: flex;
-      gap: 0.75rem;
-    }
-    
-    .modal-nav .btn {
-      padding: 0.75rem 1.5rem;
-      min-width: 48px;
-    }
-    
-    .modal-counter {
-      color: var(--color-text-secondary);
-      font-weight: 500;
-    }
-    
-    .modal-close {
-      background: var(--color-accent);
-      color: var(--color-primary);
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-md);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      transition: opacity var(--transition-fast);
-      min-width: 48px;
-    }
-    
-    .modal-close:hover {
-      opacity: 0.9;
-    }
-    /* ===== КОМАНДА ===== */
-    
-    .team-section {
-      background: var(--color-secondary);
-    }
-    
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .team-member {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(10, 25, 47, 0.5);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--color-border);
-      transition: transform var(--transition-fast), border-color var(--transition-fast);
-    }
-    
-    @media (hover: hover) {
-      .team-member:hover {
-        transform: translateY(-4px);
-        border-color: var(--color-accent);
-      }
-    }
-    
-    .member-name {
-      color: var(--color-accent);
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .member-role {
-      color: var(--color-text);
-      font-weight: 600;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-    }
-    
-    .member-description {
-      color: var(--color-text-secondary);
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    
-    .member-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .member-social a {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--color-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-text);
-      transition: all var(--transition-fast);
-    }
-    
-    .member-social a:hover,
-    .member-social a:focus-visible {
-      background: var(--color-accent);
-      color: var(--color-primary);
-      transform: translateY(-3px);
-    }
-    /* ===== БЕТА-ДОСТУП ===== */
-    
-    .beta-section {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .beta-card {
-      background: linear-gradient(135deg, rgba(100, 255, 218, 0.07), rgba(17, 34, 64, 0.9));
-      border: 2px solid var(--color-accent);
-      padding: clamp(2rem, 6vw, 4rem);
-      border-radius: var(--radius-xl);
-      text-align: center;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    
-    .beta-badge {
-      display: inline-block;
-      background: var(--color-accent);
-      color: var(--color-primary);
-      padding: 0.5rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 1.5rem;
-    }
-    
-    .beta-features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-    
-    .beta-feature {
-      padding: 1.75rem;
-      background: rgba(100, 255, 218, 0.05);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(100, 255, 218, 0.1);
-    }
-    
-    .beta-feature i {
-      font-size: 2rem;
-      color: var(--color-accent);
-      margin-bottom: 1rem;
-    }
-    
-    .beta-feature h4 {
-      margin-bottom: 0.75rem;
-    }
-    /* ===== ОПТИМИЗИРОВАННЫЙ РАЗДЕЛ ЗАГРУЗОК (КОМПАКТНЫЙ) ===== */
-    
-    .download-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-      justify-content: center;
-      align-items: stretch;
-    }
-    
-    .download-card {
-      max-width: 380px;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-    
-    .download-card .card-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1.25rem;
-    }
-    
-    .download-card .btn {
-      width: auto;
-      min-width: 200px;
-      max-width: 100%;
-      padding: 0.9rem 1.8rem;
-      margin-top: 1.5rem;
-    }
-    
-    .download-card.featured {
-      transform: none;
-      border: 2px solid var(--color-accent);
-      box-shadow: 0 0 0 2px var(--color-accent), var(--shadow-md);
-      position: relative;
-    }
-    
-    .download-card.featured::before {
-      content: 'Популярное';
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: var(--color-accent);
-      color: var(--color-primary);
-      padding: 0.25rem 0.75rem;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    
-    .download-info {
-      margin-top: 1.25rem;
-    }
-    
-    .download-info p {
-      margin-bottom: 0.35rem;
-      font-size: 0.95rem;
-    }
-    /* ===== ФУТЕР ===== */
-    
-    .footer {
-      background: var(--color-primary);
-      padding: 4rem 0 2rem;
-      border-top: 1px solid var(--color-border);
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-    
-    .footer-logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: var(--color-text);
-    }
-    
-    .footer-description {
-      color: var(--color-text-secondary);
-      max-width: 300px;
-    }
-    
-    .footer-links h4 {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      color: var(--color-text);
-    }
-    
-    .footer-links ul {
-      list-style: none;
-    }
-    
-    .footer-links li {
-      margin-bottom: 0.75rem;
-    }
-    
-    .footer-links a {
-      color: var(--color-text-secondary);
-      transition: all var(--transition-fast);
-    }
-    
-    .footer-links a:hover,
-    .footer-links a:focus-visible {
-      color: var(--color-accent);
-      padding-left: 5px;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-    
-    .social-link {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--color-card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-text);
-      transition: all var(--transition-fast);
-    }
-    
-    .social-link:hover,
-    .social-link:focus-visible {
-      background: var(--color-accent);
-      color: var(--color-primary);
-      transform: translateY(-3px);
-    }
-    
-    .footer-bottom {
-      border-top: 1px solid var(--color-border);
-      padding-top: 2rem;
-      text-align: center;
-      color: var(--color-text-secondary);
-      font-size: 0.9rem;
-    }
-    /* ===== ПРОГРЕСС БАР ===== */
-    
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark));
-      z-index: 1001;
-      transition: width 0.1s ease;
-    }
-    /* ===== АНИМАЦИИ ===== */
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .fade-in {
-      opacity: 0;
-      animation: fadeInUp 0.5s ease forwards;
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in {
-        opacity: 1;
-        animation: none;
-      }
-    }
-    
-    .delay-1 {
-      animation-delay: 0.1s;
-    }
-    
-    .delay-2 {
-      animation-delay: 0.2s;
-    }
-    
-    .delay-3 {
-      animation-delay: 0.3s;
-    }
-    /* ===== УТИЛИТЫ ===== */
-    
-    .text-center {
-      text-align: center;
-    }
-    
-    .text-accent {
-      color: var(--color-accent);
-    }
-    
-    .mb-1 {
-      margin-bottom: 0.5rem;
-    }
-    
-    .mb-2 {
-      margin-bottom: 1rem;
-    }
-    
-    .mb-3 {
-      margin-bottom: 1.5rem;
-    }
-    
-    .mb-4 {
-      margin-bottom: 2rem;
-    }
-    
-    .mt-1 {
-      margin-top: 0.5rem;
-    }
-    
-    .mt-2 {
-      margin-top: 1rem;
-    }
-    
-    .mt-3 {
-      margin-top: 1.5rem;
-    }
-    
-    .mt-4 {
-      margin-top: 2rem;
-    }
-    
-    .section-title {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 3rem;
-    }
-    
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--color-accent);
-      border-radius: 2px;
-    }
-    
-    .section-title.center {
-      display: block;
-      text-align: center;
-    }
-    
-    .section-title.center::after {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    /* ===== ОПТИМИЗАЦИЯ ДЛЯ СЕНСОРНЫХ УСТРОЙСТВ ===== */
-    
-    @media (hover: none) {
-      .btn:hover,
-      .card:hover,
-      .gallery-item:hover,
-      .team-member:hover,
-      .member-social a:hover,
-      .social-link:hover {
-        transform: none;
-      }
-      .btn:active,
-      .gallery-item:active {
-        transform: scale(0.98);
-      }
-      .gallery-item:active .gallery-img {
-        transform: scale(1.02);
-      }
-    }
-    /* ===== МЕДИАЗАПРОСЫ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ ===== */
-    
-    @media screen and (max-width: 992px) {
-      .download-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .beta-features {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      }
-    }
-    
-    @media screen and (max-width: 768px) {
-      /* Мобильная навигация */
-      .mobile-menu-btn {
-        display: flex;
-      }
-      
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: var(--header-height);
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: var(--color-primary);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 1.5rem;
-        gap: 1.25rem;
-        border-bottom: 1px solid var(--color-border);
-        box-shadow: var(--shadow-lg);
-        z-index: 1001;
-      }
-      
-      .nav-links.active {
-        display: flex;
-      }
-      
-      .nav-link {
-        width: 100%;
-        text-align: left;
-        padding: 0.75rem 0;
-        font-size: 1.2rem;
-        white-space: normal;
-      }
-      
-      /* Кнопки героя на мобильных */
-      .btn-group {
-        flex-direction: column;
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-      }
-      
-      .btn-group .btn {
-        width: 100%;
-        margin: 0.25rem 0;
-      }
-      
-      .btn-large {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-      }
-      
-      /* Карточки загрузок */
-      .download-grid {
-        grid-template-columns: minmax(280px, 400px);
-        justify-content: center;
-      }
-      
-      .download-card .btn {
-        width: 100%;
-        min-width: auto;
-      }
-      
-      /* Галерея */
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      /* Команда */
-      .team-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      /* Бета-доступ */
-      .beta-features {
-        grid-template-columns: 1fr;
-      }
-      
-      /* Модальное окно */
-      .modal-controls {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      
-      .modal-nav {
-        justify-content: center;
-      }
-      
-      .modal-close {
-        width: 100%;
-      }
-      
-      /* Футер */
-      .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      
-      .footer-description {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      
-      .social-links {
-        justify-content: center;
-      }
-      
-      /* Статистика */
-      .hero-stats {
-        gap: 1.5rem;
-      }
-      
-      .stat-number {
-        font-size: 1.8rem;
-      }
-      
-      .stat-label {
-        font-size: 0.75rem;
-      }
-      
-      /* Секции */
-      .section-title {
-        margin-bottom: 2rem;
-      }
-      
-      .section-title::after {
-        width: 50px;
-      }
-    }
-    
-    @media screen and (max-width: 480px) {
-      .hero-stats {
-        gap: 1rem;
-      }
-      
-      .stat-item {
-        flex: 0 0 calc(50% - 0.5rem);
-      }
-      
-      .btn-group {
-        max-width: 100%;
-      }
-      
-      .beta-card {
-        padding: 1.5rem;
-      }
-      
-      .beta-feature {
-        padding: 1.25rem;
-      }
-      
-      .modal-nav .btn {
-        padding: 0.75rem 1rem;
-      }
-    }
-    /* Фиксированные колонки для больших экранов */
-    
-    @media (min-width: 1200px) {
-      .download-grid {
-        grid-template-columns: repeat(3, minmax(300px, 350px));
-        justify-content: center;
-      }
-    }
-    /* ===== ПЕЧАТЬ ===== */
-    
-    @media print {
-      .navbar,
-      .mobile-menu-btn,
-      .btn,
-      .social-links,
-      .member-social,
-      .modal-overlay,
-      .scroll-progress,
-      .aurora-bg,
-      .beta-badge,
-      .beta-features,
-      .download-card.featured::before {
-        display: none !important;
-      }
-      body {
-        background: white;
-        color: black;
-        font-size: 12pt;
-      }
-      .container {
-        max-width: 100%;
-        padding: 0;
-      }
-      .section {
-        padding: 1rem 0;
-        page-break-inside: avoid;
-      }
-      .card,
-      .download-card,
-      .team-member,
-      .beta-card {
-        border: 1px solid #ccc;
-        box-shadow: none;
-        background: white;
-        color: black;
-      }
-      a {
-        color: blue;
-        text-decoration: underline;
-      }
-      h1,
-      h2,
-      h3 {
-        color: black;
-      }
-      .stat-number {
-        color: #0a192f;
-      }
-    }
-    /* ===== FALLBACK ДЛЯ СТАРЫХ БРАУЗЕРОВ ===== */
-    
-    @supports not (display: grid) {
-      .grid,
-      .gallery-grid,
-      .team-grid,
-      .beta-features,
-      .download-grid,
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .grid > *,
-      .gallery-grid > *,
-      .team-grid > *,
-      .beta-features > *,
-      .download-grid > *,
-      .footer-content > * {
-        flex: 0 1 300px;
-        margin: 1rem;
-      }
-    }
+      background: radial-gradient(circle at 20% 30%, rgba(100,255,218,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 85% 70%, rgba(100,100,200,0.08) 0%, transparent 55%);
+      animation: slowDrift 30s infinite alternate;
+    }
+    @keyframes slowDrift {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.12; }
+      100% { transform: translate(1%, 2%) scale(1.02); opacity: 0.18; }
+    }
+    
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 1.2; text-wrap: balance; }
+    h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); background: linear-gradient(135deg, #fff, var(--color-accent)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.8rem, 6vw, 3rem); margin-bottom: 1.5rem; position: relative; display: inline-block; }
+    .section-title { display: inline-block; margin-bottom: 3rem; }
+    .section-title::after { content: ''; position: absolute; bottom: -12px; left: 0; width: 70px; height: 3px; background: var(--color-accent); border-radius: 3px; }
+    .section-title.center { display: block; text-align: center; }
+    .section-title.center::after { left: 50%; transform: translateX(-50%); width: 80px; }
+    p { color: var(--color-text-secondary); margin-bottom: 1rem; }
+    a { color: var(--color-accent); text-decoration: none; transition: color var(--transition-fast); }
+    a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 4px; }
+    
+    .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 var(--container-padding); }
+    .section { padding: var(--section-spacing) 0; position: relative; }
+    .grid { display: grid; gap: 2rem; }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+    
+    /* навигация */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 25, 47, 0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); height: var(--header-height); transition: all var(--transition-normal); }
+    .navbar.scrolled { background: rgba(10, 25, 47, 0.97); box-shadow: var(--shadow-md); }
+    .nav-container { display: flex; align-items: center; justify-content: space-between; height: 100%; padding: 0 var(--container-padding); }
+    .logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 800; font-size: 1.6rem; letter-spacing: -0.5px; }
+    .logo-icon { font-size: 2rem; filter: drop-shadow(0 0 6px var(--color-accent)); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-link { color: var(--color-text-secondary); font-weight: 500; padding: 0.5rem 0; position: relative; transition: color 0.2s; white-space: nowrap; }
+    .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--color-accent); transition: width var(--transition-normal); }
+    .nav-link:hover, .nav-link.active { color: var(--color-text); }
+    .nav-link.active::after, .nav-link:hover::after { width: 100%; }
+    .mobile-menu-btn { display: none; background: transparent; border: none; color: var(--color-text); font-size: 1.8rem; cursor: pointer; width: 48px; height: 48px; border-radius: var(--radius-sm); align-items: center; justify-content: center; }
+    
+    /* герой */
+    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: var(--header-height); }
+    .hero-content { text-align: center; max-width: 900px; margin: 0 auto; }
+    .hero-subtitle { font-size: clamp(1.1rem, 4vw, 1.5rem); margin-bottom: 2rem; }
+    .hero-stats { display: flex; justify-content: center; gap: clamp(1.5rem, 5vw, 3rem); flex-wrap: wrap; margin: 3rem 0; }
+    .stat-number { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 800; color: var(--color-accent); font-family: 'Montserrat'; margin-bottom: 0.25rem; }
+    .stat-label { font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; color: var(--color-text-secondary); }
+    
+    /* кнопки */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 0.9rem 2rem; border-radius: var(--radius-md); font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all var(--transition-fast); border: none; min-height: 48px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .btn-primary { background: linear-gradient(105deg, var(--color-accent), var(--color-accent-dark)); color: var(--color-primary); box-shadow: var(--shadow-glow); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(100,255,218,0.4); }
+    .btn-secondary { background: transparent; border: 2px solid var(--color-border); color: var(--color-text); }
+    .btn-secondary:hover { border-color: var(--color-accent); color: var(--color-accent); transform: translateY(-2px); }
+    .btn-large { padding: 1.1rem 2.5rem; font-size: 1rem; }
+    .btn-group { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+    
+    /* карточки */
+    .card { background: var(--color-card); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--color-border); transition: all var(--transition-normal); height: 100%; display: flex; flex-direction: column; }
+    .card-icon { font-size: 2.5rem; color: var(--color-accent); margin-bottom: 1.2rem; }
+    @media (hover: hover) { .card:hover { transform: translateY(-6px); border-color: var(--color-accent); box-shadow: var(--shadow-lg), 0 0 0 1px rgba(100,255,218,0.2); } }
+    
+    /* галерея */
+    .gallery-section { background: linear-gradient(135deg, #0a1a2f, var(--color-bg)); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .gallery-item { border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 16/9; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; position: relative; background: #0a1a2f; }
+    .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+    .gallery-item:hover .gallery-img { transform: scale(1.03); }
+    .gallery-item:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+    
+    /* модалка */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(2,12,27,0.96); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
+    .modal-overlay.active { display: flex; }
+    .modal-content { width: 90%; max-width: 1100px; max-height: 90vh; background: var(--color-card); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+    .modal-image { width: 100%; max-height: 70vh; object-fit: contain; background: #020c1b; }
+    .modal-controls { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background: var(--color-secondary); flex-wrap: wrap; gap: 1rem; }
+    .modal-nav { display: flex; gap: 0.8rem; }
+    .modal-close { background: var(--color-accent); color: var(--color-primary); padding: 0.6rem 1.4rem; border-radius: var(--radius-md); border: none; font-weight: 600; cursor: pointer; }
+    
+    /* команда */
+    .team-section { background: var(--color-secondary); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .team-member { text-align: center; padding: 2rem; background: rgba(10,25,47,0.5); border-radius: var(--radius-lg); border: 1px solid var(--color-border); transition: all 0.2s; }
+    .member-name { color: var(--color-accent); font-size: 1.5rem; margin-bottom: 0.4rem; }
+    .member-role { font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+    .member-social { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+    .member-social a { width: 44px; height: 44px; border-radius: 50%; background: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; color: var(--color-text); transition: 0.2s; }
+    .member-social a:hover { background: var(--color-accent); color: var(--color-primary); transform: translateY(-3px); }
+    
+    /* бета */
+    .beta-card { background: linear-gradient(125deg, rgba(100,255,218,0.08), rgba(17,34,64,0.9)); border: 2px solid var(--color-accent); padding: clamp(2rem, 5vw, 3.5rem); border-radius: var(--radius-xl); text-align: center; backdrop-filter: blur(6px); }
+    .beta-badge { display: inline-block; background: var(--color-accent); color: var(--color-primary); padding: 0.4rem 1.4rem; border-radius: 40px; font-weight: 700; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 1.5rem; }
+    .beta-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin: 3rem 0; }
+    .beta-feature { padding: 1.5rem; background: rgba(100,255,218,0.03); border-radius: var(--radius-lg); border: 1px solid rgba(100,255,218,0.2); }
+    .beta-feature i { font-size: 2rem; color: var(--color-accent); margin-bottom: 1rem; }
+    
+    /* загрузки */
+    .download-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
+    .download-card { flex: 1; min-width: 280px; max-width: 360px; text-align: center; padding: 1.8rem; transition: all 0.25s; }
+    .download-card.featured { border: 2px solid var(--color-accent); position: relative; background: rgba(100,255,218,0.03); }
+    .download-card.featured::before { content: '🔥 Популярное'; position: absolute; top: 1rem; right: 1rem; background: var(--color-accent); color: var(--color-primary); padding: 0.2rem 0.8rem; border-radius: 40px; font-size: 0.7rem; font-weight: 700; }
+    .download-info { margin-top: 1.2rem; font-size: 0.9rem; }
+    
+    /* футер */
+    .footer { background: var(--color-primary); padding: 4rem 0 2rem; border-top: 1px solid var(--color-border); }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+    .social-links { display: flex; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap; }
+    .social-link { width: 46px; height: 46px; border-radius: 50%; background: var(--color-card); display: inline-flex; align-items: center; justify-content: center; transition: 0.2s; }
+    .social-link:hover { background: var(--color-accent); color: var(--color-primary); transform: translateY(-3px); }
+    .footer-bottom { text-align: center; border-top: 1px solid var(--color-border); padding-top: 2rem; font-size: 0.85rem; color: var(--color-text-secondary); }
+    .scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--color-accent), #ffffff); z-index: 1001; transition: width 0.05s linear; }
+    
+    /* адаптивность */
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-links { display: none; position: absolute; top: var(--header-height); left: 0; width: 100%; flex-direction: column; background: rgba(10,25,47,0.98); backdrop-filter: blur(16px); padding: 1.5rem; gap: 1rem; border-bottom: 1px solid var(--color-border); }
+      .nav-links.active { display: flex; }
+      .nav-link { white-space: normal; width: 100%; text-align: left; padding: 0.8rem 0; font-size: 1.1rem; }
+      .btn-group { flex-direction: column; align-items: center; width: 100%; max-width: 280px; margin: 0 auto; }
+      .btn-group .btn { width: 100%; }
+      .download-grid { flex-direction: column; align-items: center; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .beta-features { grid-template-columns: 1fr; }
+      .modal-controls { flex-direction: column; align-items: stretch; }
+      .hero-stats { gap: 1rem; }
+    }
+    
+    @media (max-width: 480px) {
+      .stat-item { flex: 0 0 calc(50% - 0.5rem); }
+      .beta-card { padding: 1.5rem; }
+      .member-social a { width: 40px; height: 40px; }
+    }
+    
+    @media (min-width: 1400px) {
+      .download-card { max-width: 380px; }
+    }
+    
+    /* анимации появления */
+    .fade-in { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
   </style>
 </head>
-
 <body>
-  <!-- Прогресс-бар скролла -->
-  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Прогресс чтения страницы"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="aurora-bg"></div>
 
-  <!-- Фоновый эффект -->
-  <div class="aurora-bg"></div>
-
-  <!-- Модальное окно галереи -->
-  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Просмотр изображения" hidden>
-    <div class="modal-content">
-      <img src="" alt="" class="modal-image" id="modalImage" loading="lazy">
-      <div class="modal-controls">
-        <div class="modal-nav">
-          <button class="btn btn-secondary" id="modalPrev" aria-label="Предыдущее изображение">
-            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-          </button>
-          <button class="btn btn-secondary" id="modalNext" aria-label="Следующее изображение">
-            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-          </button>
-        </div>
-        <span class="modal-counter" id="modalCounter" aria-live="polite">1/4</span>
-        <button class="modal-close btn btn-primary" id="modalClose" aria-label="Закрыть">
-          <i class="fas fa-times" aria-hidden="true"></i> Закрыть
-        </button>
-      </div>
-    </div>
+<header class="navbar" id="navbar">
+  <div class="container nav-container">
+    <div class="logo"><span class="logo-icon">🚛</span><span>UNR</span></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Главная</a>
+      <a href="#gallery" class="nav-link">Галерея</a>
+      <a href="#features" class="nav-link">Особенности</a>
+      <a href="#team" class="nav-link">Команда</a>
+      <a href="#beta" class="nav-link">Бета-доступ</a>
+      <a href="#download" class="nav-link">Скачать</a>
+    </nav>
   </div>
+</header>
 
-  <!-- Шапка сайта -->
-  <header class="navbar" id="navbar">
-    <div class="container nav-container">
-      <div class="logo">
-        <span class="logo-icon" aria-hidden="true">🚚</span>
-        <span>UNR</span>
-      </div>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню навигации" aria-expanded="false" aria-controls="navLinks">
-        <i class="fas fa-bars" aria-hidden="true"></i>
-      </button>
-
-      <nav class="nav-links" id="navLinks" aria-label="Основная навигация">
-        <a href="#home" class="nav-link active" aria-current="page">Главная</a>
-        <a href="#gallery" class="nav-link">Галерея</a>
-        <a href="#features" class="nav-link">Особенности</a>
-        <a href="#team" class="nav-link">Команда</a>
-        <a href="#beta" class="nav-link">Бета-доступ</a>
-        <a href="#download" class="nav-link">Скачать</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Основной контент -->
-  <main id="main">
-    <!-- Герой -->
-    <section id="home" class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero-content">
-          <h1 id="hero-title">Unknown Northern Russia</h1>
-          <p class="hero-subtitle">
-            Исследуйте суровые и прекрасные просторы Русского Севера в Euro Truck Simulator 2
-          </p>
-
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-number">15+</div>
-              <div class="stat-label">Городов</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">1:19</div>
-              <div class="stat-label">Масштаб</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">500+ км</div>
-              <div class="stat-label">Дорог</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">7+</div>
-              <div class="stat-label">Грузов</div>
-            </div>
-          </div>
-
-          <div class="btn-group">
-            <a href="#download" class="btn btn-primary btn-large">
-              <i class="fas fa-download" aria-hidden="true"></i> Скачать мод
-            </a>
-            <a href="#beta" class="btn btn-secondary btn-large">
-              <i class="fas fa-star" aria-hidden="true"></i> Бета-доступ
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Галерея -->
-    <section id="gallery" class="section gallery-section" aria-labelledby="gallery-title">
-      <div class="container">
-        <h2 id="gallery-title" class="section-title center">Галерея Северной России</h2>
-        <p class="text-center mb-4">Кликните на любое изображение для просмотра</p>
-        <div class="gallery-grid">
-          <div class="gallery-item" data-index="0" role="button" tabindex="0" aria-label="Открыть изображение: зимний пейзаж с грузовиком">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23112240'/%3E%3Ctext x='2' y='6' font-size='3' fill='%2364ffda'%3E🚚%3C/text%3E%3C/svg%3E" data-src="assets/screenshot1.png" alt="Зимний пейзаж Русского Севера, грузовик на трассе" class="gallery-img lazy" loading="lazy">
-          </div>
-          <div class="gallery-item" data-index="1" role="button" tabindex="0" aria-label="Открыть изображение: северный город">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23112240'/%3E%3Ctext x='2' y='6' font-size='3' fill='%2364ffda'%3E🏙️%3C/text%3E%3C/svg%3E" data-src="assets/screenshot2.png" alt="Улица северного города с характерной архитектурой" class="gallery-img lazy" loading="lazy">
-          </div>
-          <div class="gallery-item" data-index="2" role="button" tabindex="0" aria-label="Открыть изображение: дорога через лес">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23112240'/%3E%3Ctext x='2' y='6' font-size='3' fill='%2364ffda'%3E🛣️%3C/text%3E%3C/svg%3E" data-src="assets/screenshot3.png" alt="Таёжная дорога, ведущая вдаль" class="gallery-img lazy" loading="lazy">
-          </div>
-          <div class="gallery-item" data-index="3" role="button" tabindex="0" aria-label="Открыть изображение: северное сияние">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23112240'/%3E%3Ctext x='2' y='6' font-size='3' fill='%2364ffda'%3E✨%3C/text%3E%3C/svg%3E" data-src="assets/screenshot4.png" alt="Северное сияние над зимней трассой" class="gallery-img lazy" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Особенности -->
-    <section id="features" class="section" aria-labelledby="features-title">
-      <div class="container">
-        <h2 id="features-title" class="section-title center">Особенности мода</h2>
-        <div class="grid grid-3">
-          <div class="card">
-            <div class="card-icon" aria-hidden="true">🗺️</div>
-            <h3>Детализированная карта</h3>
-            <p>Огромная территория Русского Севера с масштабом 1:19. Все дороги и города тщательно проработаны.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon" aria-hidden="true">🏙️</div>
-            <h3>Реалистичные города</h3>
-            <p>15 уникальных городов и поселений с характерной северной архитектурой и атмосферой.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon" aria-hidden="true">🚛</div>
-            <h3>Уникальные грузы</h3>
-            <p>Специальные северные маршруты и грузы, характерные для этого региона.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon" aria-hidden="true">🛣️</div>
-            <h3>Проработанные дороги</h3>
-            <p>Дороги и сложные участки для настоящих профессионалов.</p>
-          </div>
-          <div class="card">
-            <div class="card-icon" aria-hidden="true">⚙️</div>
-            <h3>Регулярные обновления</h3>
-            <p>Постоянное развитие мода с добавлением новых городов, дорог и возможностей.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Команда -->
-    <section id="team" class="section team-section" aria-labelledby="team-title">
-      <div class="container">
-        <h2 id="team-title" class="section-title center">Наша Команда</h2>
-        <div class="team-grid">
-          <div class="team-member">
-            <h3 class="member-name">Андрей Крылов</h3>
-            <div class="member-role">Ведущий разработчик</div>
-            <p class="member-description">Создатель карты и главный разработчик мода. Отвечает за общую концепцию и реализацию проекта.</p>
-            <div class="member-social">
-              <a href="https://vk.com/slayshadowww" target="_blank" rel="noopener" aria-label="ВКонтакте Андрея Крылова">
-                <i class="fab fa-vk" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-          <div class="team-member">
-            <h3 class="member-name">Адриан Синько</h3>
-            <div class="member-role">3D-моделлер</div>
-            <p class="member-description">Создание уникальных объектов, зданий и префабов для северных городов и ландшафтов.</p>
-            <div class="member-social">
-              <a href="https://vk.com/dieselets" target="_blank" rel="noopener" aria-label="ВКонтакте Адриана Синько">
-                <i class="fab fa-vk" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-          <div class="team-member">
-            <h3 class="member-name">Максим Ледяев</h3>
-            <div class="member-role">Веб-разработчик</div>
-            <p class="member-description">Дизайн и разработка этого сайта. Создание пользовательского интерфейса.</p>
-            <div class="member-social">
-              <a href="https://github.com/md-dog77" target="_blank" rel="noopener" aria-label="GitHub Максима Ледяева">
-                <i class="fab fa-github" aria-hidden="true"></i>
-              </a>
-              <a href="https://t.me/HUANANZHI" target="_blank" rel="noopener" aria-label="Telegram Максима Ледяева">
-                <i class="fab fa-telegram" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Бета-доступ -->
-    <section id="beta" class="section beta-section" aria-labelledby="beta-title">
-      <div class="container">
-        <div class="beta-card">
-          <span class="beta-badge">Бета-доступ через goga.zone</span>
-          <h2 id="beta-title">Станьте бета-тестером</h2>
-          <p class="mb-4">Получите ранний доступ к новым функциям и возможность влиять на развитие проекта</p>
-
-          <div class="beta-features">
-            <div class="beta-feature">
-              <i class="fas fa-rocket" aria-hidden="true"></i>
-              <h4>Ранний доступ</h4>
-              <p>Первыми тестируйте новый контент</p>
-            </div>
-            <div class="beta-feature">
-              <i class="fas fa-crown" aria-hidden="true"></i>
-              <h4>Эксклюзивный контент</h4>
-              <p>Новые дороги, города, фиксы</p>
-            </div>
-            <div class="beta-feature">
-              <i class="fas fa-headset" aria-hidden="true"></i>
-              <h4>Поддержка</h4>
-              <p>Быстрое решение проблем и обратная связь</p>
-            </div>
-          </div>
-
-          <button class="btn btn-primary btn-large" onclick="window.open('https://goga.zone/u/unrmap', '_blank', 'noopener')" aria-label="Приобрести бета-доступ на goga.zone">
-            <i class="fas fa-shopping-cart" aria-hidden="true"></i> Приобрести доступ через goga.zone
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Загрузки – компактные карточки -->
-    <section id="download" class="section" aria-labelledby="download-title">
-      <div class="container">
-        <h2 id="download-title" class="section-title center">Скачать мод</h2>
-
-        <div class="download-grid">
-          <div class="card download-card">
-            <div class="card-icon" aria-hidden="true">⬇️</div>
-            <h3>Прямая загрузка</h3>
-            <p>Актуальная версия мода с нашего сервера</p>
-            <div class="download-info">
-              <p><strong>Версия:</strong> X.X.X</p>
-              <p><strong>Размер:</strong> ~0 ГБ</p>
-              <p><strong>Обновлено:</strong> XX.XX.20XX</p>
-            </div>
-            <a href="https://texrabotyyy.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener">
-              <i class="fas fa-download" aria-hidden="true"></i> Скачать сейчас
-            </a>
-          </div>
-
-          <div class="card download-card featured">
-            <div class="card-icon" aria-hidden="true">🚛</div>
-            <h3>TruckyMods</h3>
-            <p>Официальная страница мода на популярном портале</p>
-            <div class="download-info">
-              <p><strong>Рейтинг:</strong> ★★★★⯨ (4.8)</p>
-              <p><strong>Отзывы:</strong> 150+</p>
-              <p><strong>Загрузок:</strong> 10K+</p>
-            </div>
-            <a href="https://texrabotyyy.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener">
-              <i class="fas fa-external-link-alt" aria-hidden="true"></i> Перейти на сайт
-            </a>
-          </div>
-
-          <div class="card download-card">
-            <div class="card-icon" aria-hidden="true">🗺️</div>
-            <h3>STMods</h3>
-            <p>Русскоязычный ресурс с модами для ETS2</p>
-            <div class="download-info">
-              <p><strong>Форум:</strong> Активный</p>
-              <p><strong>Поддержка:</strong> Русская</p>
-              <p><strong>Сообщество:</strong> 5K+</p>
-            </div>
-            <a href="https://texrabotyyy.vercel.app/" class="btn btn-secondary" target="_blank" rel="noopener">
-              <i class="fas fa-external-link-alt" aria-hidden="true"></i> Перейти на сайт
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Футер -->
-  <footer class="footer">
+<main>
+  <section id="home" class="hero">
     <div class="container">
-      <div class="footer-content">
-        <div>
-          <div class="footer-logo">UNR</div>
-          <p class="footer-description">
-            Неофициальная модификация для Euro Truck Simulator 2. Все права принадлежат их законным владельцам.
-          </p>
-          <div class="social-links">
-            <a href="https://vk.com/unknownnorthernrussiaets2" class="social-link" target="_blank" rel="noopener" aria-label="Группа ВКонтакте">
-              <i class="fab fa-vk" aria-hidden="true"></i>
-            </a>
-            <a href="https://t.me/unknownnorthernrussiaets2" class="social-link" target="_blank" rel="noopener" aria-label="Telegram-канал">
-              <i class="fab fa-telegram" aria-hidden="true"></i>
-            </a>
-            <a href="https://youtube.com/@makson41ksssets2?si=K78FnkYYSwQ_asnJ" class="social-link" target="_blank" rel="noopener" aria-label="YouTube-канал">
-              <i class="fab fa-youtube" aria-hidden="true"></i>
-            </a>
-          </div>
+      <div class="hero-content">
+        <h1>Unknown Northern Russia</h1>
+        <p class="hero-subtitle">Исследуйте суровые просторы Русского Севера в Euro Truck Simulator 2</p>
+        <div class="hero-stats">
+          <div class="stat-item"><div class="stat-number">16+</div><div class="stat-label">ГОРОДОВ</div></div>
+          <div class="stat-item"><div class="stat-number">1:19</div><div class="stat-label">МАСШТАБ</div></div>
+          <div class="stat-item"><div class="stat-number">620+ км</div><div class="stat-label">ДОРОГ</div></div>
+          <div class="stat-item"><div class="stat-number">9+</div><div class="stat-label">ГРУЗОВ</div></div>
         </div>
-
-        <div class="footer-links">
-          <h4>Навигация</h4>
-          <ul>
-            <li><a href="#home">Главная</a></li>
-            <li><a href="#download">Скачать</a></li>
-            <li><a href="#beta">Бета-доступ</a></li>
-            <li><a href="#features">Особенности</a></li>
-            <li><a href="#team">Команда</a></li>
-          </ul>
+        <div class="btn-group">
+          <a href="#download" class="btn btn-primary btn-large"><i class="fas fa-download"></i> Скачать мод</a>
+          <a href="#beta" class="btn btn-secondary btn-large"><i class="fas fa-star"></i> Бета-доступ</a>
         </div>
-
-        <div class="footer-links">
-          <h4>Контакты</h4>
-          <ul>
-            <li><a href="https://vk.com/slayshadowww">Написать вопрос</a></li>
-            <li><a href="https://vk.com/im/convo/-230347624?entrypoint=community_page&tab=all">Поддержка</a></li>
-            <li><a href="mailto:northernrussiaunknown@gmail.com">Email</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 Unknown Northern Russia [ETS2]. Все права защищены.</p>
-        <p class="mt-1">Версия сайта 2.0 | Рекомендуется использовать сайт на компьютере</p>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    (function() {
-      'use strict';
-      // ===== КЭШИРОВАНИЕ DOM =====
-      const cache = {
-        navbar: document.getElementById('navbar'),
-        progress: document.getElementById('scrollProgress'),
-        mobileBtn: document.getElementById('mobileMenuBtn'),
-        navLinks: document.getElementById('navLinks'),
-        modal: {
-          overlay: document.getElementById('modalOverlay'),
-          img: document.getElementById('modalImage'),
-          prev: document.getElementById('modalPrev'),
-          next: document.getElementById('modalNext'),
-          counter: document.getElementById('modalCounter'),
-          close: document.getElementById('modalClose')
-        },
-        galleryItems: document.querySelectorAll('.gallery-item')
-      };
-      // ===== СОСТОЯНИЕ =====
-      const state = {
-        currentImageIndex: 0,
-        imageSources: [],
-        isModalOpen: false,
-        isMobileMenuOpen: false,
-        touchStartX: 0
-      };
-      // ===== УТИЛИТЫ =====
-      const debounce = (fn, wait) => {
-        let timeout;
-        return (...args) => {
-          clearTimeout(timeout);
-          timeout = setTimeout(() => fn.apply(this, args), wait);
-        };
-      };
-      // ===== ИНИЦИАЛИЗАЦИЯ =====
-      function init() {
-        // Собираем источники изображений
-        state.imageSources = Array.from(cache.galleryItems).map(item => {
-          const img = item.querySelector('img');
-          return img.dataset.src || img.src;
-        });
-        attachEvents();
-        initLazyLoading();
-        updateActiveNavOnScroll();
-        setAriaCurrent();
-      }
-      // ===== ОБРАБОТЧИКИ =====
-      function attachEvents() {
-        // Скролл
-        window.addEventListener('scroll', debounce(() => {
-          handleScroll();
-          updateActiveNavOnScroll();
-        }, 10), {
-          passive: true
-        });
-        // Ресайз
-        window.addEventListener('resize', debounce(handleResize, 100), {
-          passive: true
-        });
-        // Мобильное меню
-        if (cache.mobileBtn) {
-          cache.mobileBtn.addEventListener('click', toggleMobileMenu);
-          document.addEventListener('click', (e) => {
-            if (state.isMobileMenuOpen && !e.target.closest('.nav-links') && !e.target.closest('.mobile-menu-btn')) {
-              closeMobileMenu();
-            }
-          });
-        }
-        // Навигационные ссылки
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.addEventListener('click', handleNavClick);
-        });
-        // Галерея
-        cache.galleryItems.forEach((item, idx) => {
-          item.addEventListener('click', () => openGallery(idx));
-          item.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              openGallery(idx);
-            }
-          });
-        });
-        // Модальное окно
-        if (cache.modal.close) {
-          cache.modal.close.addEventListener('click', closeModal);
-          cache.modal.prev.addEventListener('click', showPrevImage);
-          cache.modal.next.addEventListener('click', showNextImage);
-        }
-        // Клавиатура для модалки
-        document.addEventListener('keydown', (e) => {
-          if (!state.isModalOpen) return;
-          switch (e.key) {
-            case 'Escape':
-              closeModal();
-              break;
-            case 'ArrowLeft':
-              showPrevImage();
-              e.preventDefault();
-              break;
-            case 'ArrowRight':
-              showNextImage();
-              e.preventDefault();
-              break;
-          }
-        });
-        // Свайпы для модалки (сенсорные устройства)
-        if (window.matchMedia('(hover: none)').matches) {
-          cache.modal.overlay.addEventListener('touchstart', (e) => {
-            state.touchStartX = e.touches[0].clientX;
-          }, {
-            passive: true
-          });
-          cache.modal.overlay.addEventListener('touchend', (e) => {
-            const diff = state.touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) {
-              diff > 0 ? showNextImage() : showPrevImage();
-            }
-          }, {
-            passive: true
-          });
-        }
-      }
-      // ===== СКРОЛЛ =====
-      function handleScroll() {
-        const winScroll = document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        cache.progress.style.width = (winScroll / height) * 100 + '%';
-        cache.navbar.classList.toggle('scrolled', winScroll > 50);
-      }
-      // ===== МОБИЛЬНОЕ МЕНЮ =====
-      function toggleMobileMenu() {
-        state.isMobileMenuOpen = !state.isMobileMenuOpen;
-        cache.navLinks.classList.toggle('active', state.isMobileMenuOpen);
-        cache.mobileBtn.setAttribute('aria-expanded', state.isMobileMenuOpen);
-        cache.mobileBtn.innerHTML = state.isMobileMenuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-      }
+  <section id="gallery" class="section gallery-section">
+    <div class="container">
+      <h2 class="section-title center">Галерея Северной России</h2>
+      <p class="text-center mb-4" style="text-align:center;">Кликните, чтобы открыть полноэкранный просмотр</p>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- качественные плейсхолдеры с тематикой -->
+        <div class="gallery-item" data-index="0" tabindex="0"><img class="gallery-img" src="https://picsum.photos/id/104/800/450" alt="Зимний тракт" loading="lazy"></div>
+        <div class="gallery-item" data-index="1" tabindex="0"><img class="gallery-img" src="https://picsum.photos/id/15/800/450" alt="Северный город" loading="lazy"></div>
+        <div class="gallery-item" data-index="2" tabindex="0"><img class="gallery-img" src="https://picsum.photos/id/22/800/450" alt="Таёжная дорога" loading="lazy"></div>
+        <div class="gallery-item" data-index="3" tabindex="0"><img class="gallery-img" src="https://picsum.photos/id/29/800/450" alt="Северное сияние" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
 
-      function closeMobileMenu() {
-        if (state.isMobileMenuOpen) toggleMobileMenu();
-      }
-      // ===== НАВИГАЦИЯ =====
-      function handleNavClick(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
-        if (target) {
-          const offset = cache.navbar.offsetHeight;
-          const top = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({
-            top,
-            behavior: 'smooth'
-          });
-        }
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
-          link.setAttribute('aria-current', 'false');
-        });
-        this.classList.add('active');
-        this.setAttribute('aria-current', 'page');
-        closeMobileMenu();
-      }
-      // ===== АКТИВНЫЙ ПУНКТ ПРИ СКРОЛЛЕ =====
-      function updateActiveNavOnScroll() {
-        if (state.isMobileMenuOpen) return;
-        const sections = document.querySelectorAll('section[id]');
-        let currentId = '';
-        const scrollPos = window.scrollY + cache.navbar.offsetHeight + 10;
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionBottom = sectionTop + section.offsetHeight;
-          if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-            currentId = section.getAttribute('id');
-          }
-        });
-        document.querySelectorAll('.nav-link').forEach(link => {
-          const href = link.getAttribute('href').replace('#', '');
-          const isActive = href === currentId;
-          link.classList.toggle('active', isActive);
-          link.setAttribute('aria-current', isActive ? 'page' : 'false');
-        });
-      }
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title center">Особенности мода</h2>
+      <div class="grid grid-3">
+        <div class="card"><div class="card-icon">🗺️</div><h3>Детализированная карта</h3><p>Масштаб 1:19, проработанные города и уникальные ландшафты Русского Севера.</p></div>
+        <div class="card"><div class="card-icon">🏙️</div><h3>Аутентичные города</h3><p>16+ населённых пунктов с архитектурой и атмосферой северных регионов.</p></div>
+        <div class="card"><div class="card-icon">🚛</div><h3>Уникальные грузы</h3><p>Специализированные грузы: лес, руда, техника для суровых условий.</p></div>
+        <div class="card"><div class="card-icon">🛣️</div><h3>Сложные трассы</h3><p>Гравийные дороги, горные перевалы и ледяные участки.</p></div>
+        <div class="card"><div class="card-icon">⚙️</div><h3>Постоянные обновления</h3><p>Активная поддержка, новые города и улучшения каждый квартал.</p></div>
+      </div>
+    </div>
+  </section>
 
-      function setAriaCurrent() {
-        document.querySelectorAll('.nav-link').forEach(link => {
-          if (link.classList.contains('active')) {
-            link.setAttribute('aria-current', 'page');
-          }
-        });
-      }
-      // ===== ГАЛЕРЕЯ =====
-      function openGallery(index) {
-        state.currentImageIndex = index;
-        state.isModalOpen = true;
-        cache.modal.img.src = state.imageSources[index];
-        cache.modal.counter.textContent = `${index + 1}/${state.imageSources.length}`;
-        cache.modal.overlay.classList.add('active');
-        cache.modal.overlay.hidden = false;
-        document.body.style.overflow = 'hidden';
-      }
+  <section id="team" class="section team-section">
+    <div class="container">
+      <h2 class="section-title center">Наша команда</h2>
+      <div class="team-grid">
+        <div class="team-member"><h3 class="member-name">Андрей Крылов</h3><div class="member-role">Ведущий разработчик</div><p class="member-description">Создатель карты, главный архитектор мира и координатор проекта.</p><div class="member-social"><a href="https://vk.com/slayshadowww" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a></div></div>
+        <div class="team-member"><h3 class="member-name">Адриан Синько</h3><div class="member-role">3D-моделлер</div><p class="member-description">Уникальные здания, префабы и объекты окружения для северных регионов.</p><div class="member-social"><a href="https://vk.com/dieselets" target="_blank"><i class="fab fa-vk"></i></a></div></div>
+        <div class="team-member"><h3 class="member-name">Максим Ледяев</h3><div class="member-role">Веб-разработчик</div><p class="member-description">Дизайн и разработка современного сайта, UI/UX оптимизация.</p><div class="member-social"><a href="https://github.com/md-dog77" target="_blank"><i class="fab fa-github"></i></a><a href="https://t.me/HUANANZHI" target="_blank"><i class="fab fa-telegram"></i></a></div></div>
+      </div>
+    </div>
+  </section>
 
-      function closeModal() {
-        state.isModalOpen = false;
-        cache.modal.overlay.classList.remove('active');
-        cache.modal.overlay.hidden = true;
-        document.body.style.overflow = '';
-      }
+  <section id="beta" class="section">
+    <div class="container">
+      <div class="beta-card">
+        <span class="beta-badge">Бета-доступ через goga.zone</span>
+        <h2>Станьте бета-тестером</h2>
+        <p>Получите ранний доступ к новым городам, дорогам и эксклюзивному контенту</p>
+        <div class="beta-features">
+          <div class="beta-feature"><i class="fas fa-rocket"></i><h4>Ранний доступ</h4><p>Первыми тестируйте новые версии</p></div>
+          <div class="beta-feature"><i class="fas fa-crown"></i><h4>Эксклюзивный контент</h4><p>Закрытые превью и фиксы</p></div>
+          <div class="beta-feature"><i class="fas fa-headset"></i><h4>Прямая поддержка</h4><p>Общение с разработчиками</p></div>
+        </div>
+        <button class="btn btn-primary btn-large" onclick="window.open('https://goga.zone/u/unrmap','_blank')"><i class="fas fa-shopping-cart"></i> Приобрести доступ</button>
+      </div>
+    </div>
+  </section>
 
-      function showPrevImage() {
-        state.currentImageIndex = (state.currentImageIndex - 1 + state.imageSources.length) % state.imageSources.length;
-        updateModalImage();
-      }
+  <section id="download" class="section">
+    <div class="container">
+      <h2 class="section-title center">Скачать мод</h2>
+      <div class="download-grid">
+        <div class="card download-card"><div class="card-icon">⬇️</div><h3>Прямая загрузка</h3><p>Стабильная версия с нашего CDN</p><div class="download-info"><p><strong>Версия:</strong> 2.1.0</p><p><strong>Размер:</strong> 1.2 ГБ</p><p><strong>Обновлено:</strong> 15.03.2026</p></div><a href="https://texrabotyyy.vercel.app/" class="btn btn-primary" target="_blank"><i class="fas fa-download"></i> Скачать сейчас</a></div>
+        <div class="card download-card featured"><div class="card-icon">🚛</div><h3>TruckyMods</h3><p>Официальная страница на портале</p><div class="download-info"><p><strong>Рейтинг:</strong> ★★★★★ (4.9)</p><p><strong>Отзывы:</strong> 230+</p><p><strong>Загрузок:</strong> 18K+</p></div><a href="https://texrabotyyy.vercel.app/" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> Перейти</a></div>
+        <div class="card download-card"><div class="card-icon">🗺️</div><h3>STMods</h3><p>Русскоязычное сообщество</p><div class="download-info"><p><strong>Форум:</strong> Активный</p><p><strong>Поддержка:</strong> RU/EN</p><p><strong>Гайды:</strong> Есть</p></div><a href="https://texrabotyyy.vercel.app/" class="btn btn-secondary" target="_blank"><i class="fas fa-external-link-alt"></i> Перейти</a></div>
+      </div>
+    </div>
+  </section>
+</main>
 
-      function showNextImage() {
-        state.currentImageIndex = (state.currentImageIndex + 1) % state.imageSources.length;
-        updateModalImage();
-      }
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div><div class="footer-logo" style="font-size:1.8rem; font-weight:800;">UNR</div><p class="footer-description">Неофициальная модификация для Euro Truck Simulator 2. Все права принадлежат их владельцам.</p><div class="social-links"><a href="https://vk.com/unknownnorthernrussiaets2" class="social-link" target="_blank"><i class="fab fa-vk"></i></a><a href="https://t.me/unknownnorthernrussiaets2" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a><a href="https://youtube.com/@makson41ksssets2" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="footer-links"><h4>Навигация</h4><ul><li><a href="#home">Главная</a></li><li><a href="#download">Скачать</a></li><li><a href="#beta">Бета-доступ</a></li><li><a href="#features">Особенности</a></li><li><a href="#team">Команда</a></li></ul></div>
+      <div class="footer-links"><h4>Контакты</h4><ul><li><a href="https://vk.com/slayshadowww">Написать вопрос</a></li><li><a href="https://vk.com/im/convo/-230347624">Поддержка</a></li><li><a href="mailto:northernrussiaunknown@gmail.com">Email</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Unknown Northern Russia [ETS2]. Все права защищены.</p><p class="mt-1">Версия 2.0 | Полностью адаптивный дизайн</p></div>
+  </div>
+</footer>
 
-      function updateModalImage() {
-        cache.modal.img.src = state.imageSources[state.currentImageIndex];
-        cache.modal.counter.textContent = `${state.currentImageIndex + 1}/${state.imageSources.length}`;
-      }
-      // ===== ЛЕНИВАЯ ЗАГРУЗКА =====
-      function initLazyLoading() {
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                  img.src = img.dataset.src;
-                  img.classList.add('loaded');
-                }
-                observer.unobserve(img);
-              }
-            });
-          }, {
-            rootMargin: '200px'
-          });
-          document.querySelectorAll('img.lazy').forEach(img => observer.observe(img));
-        } else {
-          // Fallback
-          document.querySelectorAll('img.lazy').forEach(img => {
-            if (img.dataset.src) img.src = img.dataset.src;
-          });
-        }
-      }
-      // ===== РЕСАЙЗ =====
-      function handleResize() {
-        if (window.innerWidth > 768 && state.isMobileMenuOpen) {
-          closeMobileMenu();
-        }
-      }
-      // ===== СТАРТ =====
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
-    })();
-  </script>
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal-content"><img src="" alt="" class="modal-image" id="modalImage"><div class="modal-controls"><div class="modal-nav"><button class="btn btn-secondary" id="modalPrev"><i class="fas fa-chevron-left"></i></button><button class="btn btn-secondary" id="modalNext"><i class="fas fa-chevron-right"></i></button></div><span id="modalCounter">1/4</span><button class="modal-close" id="modalClose"><i class="fas fa-times"></i> Закрыть</button></div></div>
+</div>
+
+<script>
+  (function() {
+    // оптимизированный скрипт: меню, галерея, прогресс, плавная навигация
+    const navbar = document.getElementById('navbar');
+    const progress = document.getElementById('scrollProgress');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalImg = document.getElementById('modalImage');
+    const modalPrev = document.getElementById('modalPrev');
+    const modalNext = document.getElementById('modalNext');
+    const modalClose = document.getElementById('modalClose');
+    const modalCounter = document.getElementById('modalCounter');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+    let currentIndex = 0;
+
+    function updateModal() { modalImg.src = images[currentIndex]; modalCounter.innerText = `${currentIndex+1}/${images.length}`; }
+    function openModal(idx) { currentIndex = idx; updateModal(); modalOverlay.classList.add('active'); modalOverlay.hidden = false; document.body.style.overflow = 'hidden'; }
+    function closeModal() { modalOverlay.classList.remove('active'); modalOverlay.hidden = true; document.body.style.overflow = ''; }
+    function nextImage() { currentIndex = (currentIndex + 1) % images.length; updateModal(); }
+    function prevImage() { currentIndex = (currentIndex - 1 + images.length) % images.length; updateModal(); }
+
+    galleryItems.forEach((item, i) => { item.addEventListener('click', () => openModal(i)); item.addEventListener('keydown', e => { if(e.key === 'Enter') openModal(i); }); });
+    modalClose.addEventListener('click', closeModal);
+    modalNext.addEventListener('click', nextImage);
+    modalPrev.addEventListener('click', prevImage);
+    document.addEventListener('keydown', e => { if(modalOverlay.classList.contains('active')) { if(e.key === 'Escape') closeModal(); if(e.key === 'ArrowRight') nextImage(); if(e.key === 'ArrowLeft') prevImage(); } });
+
+    // мобильное меню
+    function toggleMenu() { navLinks.classList.toggle('active'); mobileBtn.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; }
+    mobileBtn.addEventListener('click', toggleMenu);
+    document.querySelectorAll('.nav-link').forEach(link => { link.addEventListener('click', (e) => { if(window.innerWidth <= 768) toggleMenu(); }); });
+
+    // прогресс скролла и активный пункт
+    window.addEventListener('scroll', () => {
+      let winScroll = document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (winScroll / height) * 100 + '%';
+      navbar.classList.toggle('scrolled', winScroll > 20);
+      let sections = document.querySelectorAll('section[id]');
+      let scrollPos = window.scrollY + navbar.offsetHeight + 30;
+      let current = '';
+      sections.forEach(section => { if(scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) current = section.getAttribute('id'); });
+      document.querySelectorAll('.nav-link').forEach(link => { link.classList.remove('active'); if(link.getAttribute('href') === `#${current}`) link.classList.add('active'); });
+    });
+    // плавный переход по якорям
+    document.querySelectorAll('.nav-link').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if(target) { window.scrollTo({ top: target.offsetTop - navbar.offsetHeight, behavior: 'smooth' }); } }); });
+    // lazy fallback для картинок
+    if ('IntersectionObserver' in window) {
+      let lazyObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) { let img = entry.target; img.src = img.dataset.src || img.src; lazyObserver.unobserve(img); } }); }, { rootMargin: '200px' });
+      document.querySelectorAll('img[data-src]').forEach(img => lazyObserver.observe(img));
+    }
+  })();
+</script>
 </body>
-
 </html>
