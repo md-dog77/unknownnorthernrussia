@@ -14,11 +14,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>UNR | Unknown Northern Russia — мод для Euro Truck Simulator 2</title>
   
-  <!-- Favicon (inline svg на случай отсутствия файлов) -->
+  <!-- Favicon (inline svg) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a192f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%2364ffda' font-family='monospace'%3E🚚%3C/text%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a192f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%2364ffda'%3E🚚%3C/text%3E%3C/svg%3E">
   
-  <!-- Предзагрузка критических шрифтов -->
+  <!-- Предзагрузка шрифтов -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
@@ -180,6 +180,69 @@
     .beta-feature { padding: 1.5rem; background: rgba(100,255,218,0.03); border-radius: var(--radius-lg); border: 1px solid rgba(100,255,218,0.2); }
     .beta-feature i { font-size: 2rem; color: var(--color-accent); margin-bottom: 1rem; }
     
+    /* Discord виджет — новая секция */
+    .discord-section {
+      background: radial-gradient(ellipse at 70% 30%, rgba(100,255,218,0.05), transparent);
+    }
+    .discord-card {
+      background: var(--color-card);
+      border-radius: var(--radius-xl);
+      padding: 2rem 1.5rem 2rem 1.5rem;
+      border: 1px solid var(--color-border);
+      text-align: center;
+      transition: all var(--transition-normal);
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-md);
+    }
+    .discord-card:hover {
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-glow);
+    }
+    .discord-widget-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0 1.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+    .discord-widget-wrapper iframe {
+      display: block;
+      border-radius: var(--radius-md);
+      background: #1e1f22;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.2s;
+    }
+    .discord-widget-wrapper iframe:hover {
+      transform: scale(1.01);
+    }
+    .discord-text {
+      margin-bottom: 1rem;
+    }
+    .discord-text p {
+      font-size: 0.95rem;
+    }
+    .discord-btn {
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 480px) {
+      .discord-card {
+        padding: 1.5rem 1rem;
+      }
+      .discord-widget-wrapper iframe {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 450px;
+      }
+      /* альтернативное поведение: сохраняем пропорции, но если не влазит — скролл */
+      .discord-widget-wrapper {
+        justify-content: flex-start;
+      }
+    }
+    /* на десктопе iframe сохраняет исходные размеры, но обертка позволяет скроллить при необходимости */
+    
     /* загрузки */
     .download-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; }
     .download-card { flex: 1; min-width: 280px; max-width: 360px; text-align: center; padding: 1.8rem; transition: all 0.25s; }
@@ -242,6 +305,7 @@
       <a href="#features" class="nav-link">Особенности</a>
       <a href="#team" class="nav-link">Команда</a>
       <a href="#beta" class="nav-link">Бета-доступ</a>
+      <a href="#discord" class="nav-link">Discord</a>
       <a href="#download" class="nav-link">Скачать</a>
     </nav>
   </div>
@@ -272,7 +336,6 @@
       <h2 class="section-title center">Галерея Северной России</h2>
       <p class="text-center mb-4" style="text-align:center;">Кликните, чтобы открыть полноэкранный просмотр</p>
       <div class="gallery-grid" id="galleryGrid">
-        <!-- качественные плейсхолдеры с тематикой -->
         <div class="gallery-item" data-index="0" tabindex="0"><img class="gallery-img" src="assets/screenshot1.png" alt="Упс..." loading="lazy"></div>
         <div class="gallery-item" data-index="1" tabindex="0"><img class="gallery-img" src="assets/screenshot2.png" alt="Упс..." loading="lazy"></div>
         <div class="gallery-item" data-index="2" tabindex="0"><img class="gallery-img" src="assets/screenshot3.png" alt="Упс..." loading="lazy"></div>
@@ -321,6 +384,37 @@
     </div>
   </section>
 
+
+  <section id="discord" class="section discord-section">
+    <div class="container">
+      <div class="discord-card">
+        <div class="card-icon" style="font-size: 3rem;"><i class="fab fa-discord"></i></div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Discord сервер</h2>
+        <div class="discord-text">
+          <p>Присоединяйтесь к официальному сообществу UNR! Обсуждайте обновления, делитесь скриншотами, находите единомышленников и получайте оперативную поддержку.</p>
+        </div>
+        <div class="discord-widget-wrapper">
+          <iframe 
+            src="https://discord.com/widget?id=1488449090948825098&theme=dark" 
+            width="350" 
+            height="500" 
+            allowtransparency="true" 
+            frameborder="0" 
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            loading="lazy"
+            title="Discord виджет сообщества UNR">
+          </iframe>
+        </div>
+        <div class="discord-btn">
+          <a href="https://discord.gg/JBFwSJuHmv" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-discord"></i> Присоединиться в Discord
+          </a>
+          <p style="font-size: 0.75rem; margin-top: 1rem; opacity: 0.7;">*Для отображения виджета требуется включённый виджет на сервере</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="download" class="section">
     <div class="container">
       <h2 class="section-title center">Скачать мод</h2>
@@ -337,7 +431,7 @@
   <div class="container">
     <div class="footer-content">
       <div><div class="footer-logo" style="font-size:1.8rem; font-weight:800;">UNR</div><p class="footer-description">Неофициальная модификация для Euro Truck Simulator 2. Все права принадлежат их владельцам.</p><div class="social-links"><a href="https://vk.com/unknownnorthernrussiaets2" class="social-link" target="_blank"><i class="fab fa-vk"></i></a><a href="https://t.me/unknownnorthernrussiaets2" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a><a href="https://youtube.com/@makson41ksssets2" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a></div></div>
-      <div class="footer-links"><h4>Навигация</h4><ul><li><a href="#home">Главная</a></li><li><a href="#download">Скачать</a></li><li><a href="#beta">Бета-доступ</a></li><li><a href="#features">Особенности</a></li><li><a href="#team">Команда</a></li></ul></div>
+      <div class="footer-links"><h4>Навигация</h4><ul><li><a href="#home">Главная</a></li><li><a href="#download">Скачать</a></li><li><a href="#beta">Бета-доступ</a></li><li><a href="#features">Особенности</a></li><li><a href="#team">Команда</a></li><li><a href="#discord">Discord</a></li></ul></div>
       <div class="footer-links"><h4>Контакты</h4><ul><li><a href="https://vk.com/slayshadowww">Написать вопрос</a></li><li><a href="https://vk.com/im/convo/-230347624">Поддержка</a></li><li><a href="mailto:northernrussiaunknown@gmail.com">Email</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p>© 2026 Unknown Northern Russia [ETS2]. Все права защищены.</p><p class="mt-1">Версия 2.0 | Полностью адаптивный дизайн</p></div>
