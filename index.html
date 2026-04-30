@@ -2,1322 +2,1285 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="description" content="Unknown Northern Russia — детализированная карта Русского Севера для Euro Truck Simulator 2. Уникальные города, сложные трассы, реалистичные грузы. Бета-доступ и постоянные обновления.">
-    <meta name="keywords" content="ETS2, мод, карта, Русский Север, Unknown Northern Russia, грузовики, симулятор, скачать мод">
-    <meta name="theme-color" content="#0a192f">
-    <meta name="color-scheme" content="dark">
-    <meta property="og:title" content="UNR | Unknown Northern Russia — мод для ETS2">
-    <meta property="og:description" content="Исследуйте суровые просторы Русского Севера. Масштабная карта, уникальные грузы и атмосфера.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://i.postimg.cc/43WWj8PW/banners.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>UNR | Мод для Euro Truck Simulator 2</title>
-
-
-    <link rel="shortcut icon" href="/assets/favicon.ICO" type="image/x-icon">
-    <link rel="icon" href="/assets/favicon.ICO" type="image/x-icon">
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-
-        :root {
-            --color-primary: #0a192f;
-            --color-secondary: #112240;
-            --color-accent: #64ffda;
-            --color-accent-dark: #4fc3b0;
-            --color-text: #e6f1ff;
-            --color-text-secondary: #8892b0;
-            --color-bg: #020c1b;
-            --color-card: #112240;
-            --color-border: #233554;
-            --shadow-sm: 0 2px 4px rgba(2, 12, 27, 0.7);
-            --shadow-md: 0 4px 12px rgba(2, 12, 27, 0.9);
-            --shadow-lg: 0 10px 30px rgba(2, 12, 27, 0.95);
-            --shadow-glow: 0 0 20px rgba(100, 255, 218, 0.3);
-            --radius-xs: 6px;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-xl: 30px;
-            --transition-fast: 0.2s ease;
-            --transition-normal: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            --container-padding: clamp(1rem, 5vw, 2rem);
-            --section-spacing: clamp(3rem, 8vw, 6rem);
-            --header-height: 70px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-            height: 100%;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 85% 70%, rgba(100, 100, 200, 0.05) 0%, transparent 55%);
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        .aurora-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -2;
-            opacity: 0.2;
-            background: radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 85% 70%, rgba(100, 100, 200, 0.12) 0%, transparent 55%);
-            animation: slowDrift 30s infinite alternate;
-        }
-
-        @keyframes slowDrift {
-            0% {
-                transform: translate(0, 0) scale(1);
-                opacity: 0.2;
-            }
-
-            100% {
-                transform: translate(1%, 2%) scale(1.02);
-                opacity: 0.28;
-            }
-        }
-
-
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: var(--header-height);
-            background: url('https://i.postimg.cc/43WWj8PW/banners.jpg') center/cover no-repeat;
-
-        }
-
-        @media (min-width: 769px) {
-            .hero {
-                background-attachment: fixed;
-            }
-        }
-
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(2, 12, 27, 0.45);
-            backdrop-filter: blur(0px);
-            z-index: 1;
-        }
-
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2.5rem 2rem;
-            background: rgba(10, 25, 47, 0.25);
-            backdrop-filter: blur(12px) saturate(180%);
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(100, 255, 218, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(100, 255, 218, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-
-        .hero-content h1 {
-            background: linear-gradient(135deg, #ffffff, var(--color-accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-content p {
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-            font-weight: 500;
-        }
-
-        .hero-stats .stat-label {
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 500;
-        }
-
-
-        @media (max-width: 768px) {
-            .hero-content {
-                backdrop-filter: blur(8px) saturate(160%);
-                padding: 1.8rem 1.2rem;
-                margin: 1rem;
-                width: calc(100% - 2rem);
-            }
-
-            .hero::before {
-                background: rgba(2, 12, 27, 0.5);
-            }
-        }
-
-
-        @media (prefers-reduced-transparency: reduce) {
-            .hero-content {
-                backdrop-filter: blur(4px);
-                background: rgba(10, 25, 47, 0.7);
-            }
-        }
-
-
-        @supports not (backdrop-filter: blur(12px)) {
-            .hero-content {
-                background: rgba(10, 25, 47, 0.85);
-            }
-        }
-
-
-        .section {
-            position: relative;
-            background: rgba(2, 12, 27, 0.65);
-            backdrop-filter: blur(2px);
-            padding: var(--section-spacing) 0;
-        }
-
-        .gallery-section,
-        .team-section {
-            background: rgba(10, 25, 47, 0.7);
-            backdrop-filter: blur(4px);
-        }
-
-
-        h1,
-        h2,
-        h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-            text-wrap: balance;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 8vw, 4.2rem);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: clamp(1.6rem, 6vw, 3rem);
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title {
-            display: inline-block;
-            margin-bottom: 3rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 0;
-            width: 70px;
-            height: 3px;
-            background: var(--color-accent);
-            border-radius: 3px;
-        }
-
-        .section-title.center {
-            display: block;
-            text-align: center;
-        }
-
-        .section-title.center::after {
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-        }
-
-        p {
-            color: var(--color-text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        a {
-            color: var(--color-accent);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-        }
-
-        a:focus-visible {
-            outline: 2px solid var(--color-accent);
-            outline-offset: 4px;
-            border-radius: 4px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--container-padding);
-        }
-
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-        }
-
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(10, 25, 47, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--color-border);
-            height: var(--header-height);
-            transition: all var(--transition-normal);
-        }
-
-        .navbar.scrolled {
-            background: rgba(10, 25, 47, 0.97);
-            box-shadow: var(--shadow-md);
-        }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-            padding: 0 var(--container-padding);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-weight: 800;
-            font-size: 1.6rem;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-icon {
-            font-size: 2rem;
-            filter: drop-shadow(0 0 6px var(--color-accent));
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: var(--color-text-secondary);
-            font-weight: 500;
-            padding: 0.5rem 0;
-            position: relative;
-            transition: color 0.2s;
-            white-space: nowrap;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-accent);
-            transition: width var(--transition-normal);
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--color-text);
-        }
-
-        .nav-link.active::after,
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: transparent;
-            border: none;
-            color: var(--color-text);
-            font-size: 1.8rem;
-            cursor: pointer;
-            width: 48px;
-            height: 48px;
-            border-radius: var(--radius-sm);
-            align-items: center;
-            justify-content: center;
-        }
-
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: clamp(1rem, 4vw, 3rem);
-            flex-wrap: wrap;
-            margin: 2.5rem 0 2rem;
-        }
-
-        .stat-number {
-            font-size: clamp(1.8rem, 6vw, 2.8rem);
-            font-weight: 800;
-            color: var(--color-accent);
-            font-family: 'Montserrat';
-            margin-bottom: 0.25rem;
-            text-shadow: 0 0 8px rgba(100, 255, 218, 0.5);
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 0.9rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            border: none;
-            min-height: 48px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background: transparent;
-        }
-
-        .btn-primary {
-            background: linear-gradient(105deg, var(--color-accent), var(--color-accent-dark));
-            color: var(--color-primary);
-            box-shadow: 0 4px 12px rgba(100, 255, 218, 0.25);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(100, 255, 218, 0.5);
-            filter: brightness(1.05);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .btn-secondary {
-            background: rgba(100, 255, 218, 0.08);
-            border: 1.5px solid var(--color-accent);
-            color: var(--color-accent);
-            backdrop-filter: blur(4px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(100, 255, 218, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 14px rgba(100, 255, 218, 0.2);
-        }
-
-        .btn-secondary:active {
-            transform: translateY(0);
-        }
-
-        .btn-large {
-            padding: 1rem 2.5rem;
-            font-size: 1rem;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-
-        .social-link,
-        .member-social a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: rgba(17, 34, 64, 0.9);
-            color: var(--color-text);
-            font-size: 1.4rem;
-            transition: all 0.25s ease;
-            border: 1px solid var(--color-border);
-            backdrop-filter: blur(4px);
-        }
-
-        .social-link:hover,
-        .member-social a:hover {
-            transform: translateY(-4px) scale(1.05);
-            border-color: var(--color-accent);
-            background: var(--color-accent);
-            color: var(--color-primary);
-            box-shadow: 0 6px 14px rgba(100, 255, 218, 0.3);
-        }
-
-        .social-link[href*="vk.com"]:hover,
-        .member-social a[href*="vk.com"]:hover {
-            background: #0077ff;
-            border-color: #0077ff;
-            color: white;
-        }
-
-        .social-link[href*="t.me"]:hover,
-        .member-social a[href*="t.me"]:hover {
-            background: #26a5e4;
-            border-color: #26a5e4;
-            color: white;
-        }
-
-        .social-link[href*="github.com"]:hover,
-        .member-social a[href*="github.com"]:hover {
-            background: #ffffff;
-            border-color: #ffffff;
-            color: #0a192f;
-        }
-
-        .social-link[href*="youtube.com"]:hover {
-            background: #ff0000;
-            border-color: #ff0000;
-            color: white;
-        }
-
-
-        .card {
-            background: var(--color-card);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            border: 1px solid var(--color-border);
-            transition: all var(--transition-normal);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            color: var(--color-accent);
-            margin-bottom: 1.2rem;
-        }
-
-        @media (hover: hover) {
-            .card:hover {
-                transform: translateY(-6px);
-                border-color: var(--color-accent);
-                box-shadow: var(--shadow-lg), 0 0 0 1px rgba(100, 255, 218, 0.2);
-            }
-        }
-
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.2s;
-            background: #0a1a2f;
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-            display: block;
-        }
-
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.03);
-        }
-
-
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(2, 12, 27, 0.96);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(8px);
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal-content {
-            width: 90%;
-            max-width: 1100px;
-            max-height: 90vh;
-            background: var(--color-card);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-image {
-            width: 100%;
-            max-height: 70vh;
-            object-fit: contain;
-            background: #020c1b;
-        }
-
-        .modal-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            background: var(--color-secondary);
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .modal-nav {
-            display: flex;
-            gap: 0.8rem;
-        }
-
-        .modal-close {
-            background: var(--color-accent);
-            color: var(--color-primary);
-            padding: 0.6rem 1.4rem;
-            border-radius: 50px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .modal-close:hover {
-            transform: scale(1.02);
-            background: var(--color-accent-dark);
-        }
-
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .team-member {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(10, 25, 47, 0.6);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-border);
-            transition: all 0.2s;
-        }
-
-        .member-name {
-            color: var(--color-accent);
-            font-size: 1.5rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .member-role {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-
-        .beta-card {
-            background: linear-gradient(125deg, rgba(100, 255, 218, 0.1), rgba(17, 34, 64, 0.85));
-            border: 2px solid var(--color-accent);
-            padding: clamp(2rem, 5vw, 3.5rem);
-            border-radius: var(--radius-xl);
-            text-align: center;
-            backdrop-filter: blur(6px);
-        }
-
-        .beta-badge {
-            display: inline-block;
-            background: var(--color-accent);
-            color: var(--color-primary);
-            padding: 0.4rem 1.4rem;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-        }
-
-        .beta-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .beta-feature {
-            padding: 1.5rem;
-            background: rgba(100, 255, 218, 0.03);
-            border-radius: var(--radius-lg);
-            border: 1px solid rgba(100, 255, 218, 0.2);
-        }
-
-        .beta-feature i {
-            font-size: 2rem;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-
-
-        .download-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .download-card {
-            flex: 1;
-            min-width: 260px;
-            max-width: 360px;
-            text-align: center;
-            padding: 1.8rem;
-        }
-
-        .download-card.featured {
-            border: 2px solid var(--color-accent);
-            position: relative;
-            background: rgba(100, 255, 218, 0.03);
-        }
-
-        .download-card.featured::before {
-            content: '🔥 Популярное';
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--color-accent);
-            color: var(--color-primary);
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            font-weight: 700;
-        }
-
-        .download-info {
-            margin-top: 1.2rem;
-            font-size: 0.9rem;
-        }
-
-
-        .footer {
-            background: rgba(10, 25, 47, 0.9);
-            backdrop-filter: blur(8px);
-            padding: 4rem 0 2rem;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid var(--color-border);
-            padding-top: 2rem;
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin: 0.5rem 0;
-        }
-
-
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--color-accent), #ffffff);
-            z-index: 1001;
-            transition: width 0.05s linear;
-        }
-
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: var(--header-height);
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                background: rgba(10, 25, 47, 0.98);
-                backdrop-filter: blur(16px);
-                padding: 1.5rem;
-                gap: 1rem;
-                border-bottom: 1px solid var(--color-border);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-link {
-                white-space: normal;
-                width: 100%;
-                text-align: left;
-                padding: 0.8rem 0;
-                font-size: 1.1rem;
-            }
-
-            .btn-group {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                max-width: 280px;
-                margin: 0 auto;
-            }
-
-            .btn-group .btn {
-                width: 100%;
-            }
-
-            .download-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .beta-features {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-controls {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .stat-item {
-                flex: 0 0 calc(50% - 0.5rem);
-                text-align: center;
-            }
-
-            .beta-card {
-                padding: 1.5rem;
-            }
-
-            .member-social a {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-
-            .btn {
-                padding: 0.7rem 1.5rem;
-                font-size: 0.85rem;
-            }
-
-            .hero-content {
-                padding: 1.2rem;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .container {
-                max-width: 960px;
-            }
-
-            .grid-3 {
-                gap: 1.5rem;
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            animation: fadeUp 0.6s ease forwards;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mb-4 {
-            margin-bottom: 1.5rem;
-        }
-
-        .mt-1 {
-            margin-top: 0.5rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="description" content="Unknown Northern Russia — детализированная карта Русского Севера для Euro Truck Simulator 2. Уникальные города, сложные трассы, реалистичные грузы. Бета-доступ и постоянные обновления.">
+  <meta name="keywords" content="ETS2, мод, карта, Русский Север, Unknown Northern Russia, грузовики, симулятор, скачать мод">
+  <meta name="theme-color" content="#0a192f">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="UNR | Unknown Northern Russia — мод для ETS2">
+  <meta property="og:description" content="Исследуйте суровые просторы Русского Севера. Масштабная карта, уникальные грузы и атмосфера.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.postimg.cc/43WWj8PW/banners.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>UNR | Мод для Euro Truck Simulator 2</title>
+
+  <link rel="shortcut icon" href="/assets/favicon.ICO" type="image/x-icon">
+  <link rel="icon" href="/assets/favicon.ICO" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    
+    :root {
+      --color-primary: #0a192f;
+      --color-secondary: #112240;
+      --color-accent: #64ffda;
+      --color-accent-dark: #4fc3b0;
+      --color-text: #e6f1ff;
+      --color-text-secondary: #8892b0;
+      --color-bg: #020c1b;
+      --color-card: #112240;
+      --color-border: #233554;
+      --shadow-sm: 0 2px 4px rgba(2, 12, 27, 0.7);
+      --shadow-md: 0 4px 12px rgba(2, 12, 27, 0.9);
+      --shadow-lg: 0 10px 30px rgba(2, 12, 27, 0.95);
+      --shadow-glow: 0 0 20px rgba(100, 255, 218, 0.3);
+      --radius-xs: 6px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 30px;
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      --container-padding: clamp(1rem, 5vw, 2rem);
+      --section-spacing: clamp(3rem, 8vw, 6rem);
+      --header-height: 70px;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      height: 100%;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.08) 0%, transparent 50%), radial-gradient(circle at 85% 70%, rgba(100, 100, 200, 0.05) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: -2;
+    }
+    
+    .aurora-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -2;
+      opacity: 0.2;
+      background: radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.2) 0%, transparent 50%), radial-gradient(circle at 85% 70%, rgba(100, 100, 200, 0.12) 0%, transparent 55%);
+      animation: slowDrift 30s infinite alternate;
+    }
+    
+    @keyframes slowDrift {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.2;
+      }
+      100% {
+        transform: translate(1%, 2%) scale(1.02);
+        opacity: 0.28;
+      }
+    }
+    
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: var(--header-height);
+      background: url('https://i.postimg.cc/43WWj8PW/banners.jpg') center/cover no-repeat;
+    }
+    
+    @media (min-width: 769px) {
+      .hero {
+        background-attachment: fixed;
+      }
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 12, 27, 0.45);
+      backdrop-filter: blur(0px);
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      background: rgba(10, 25, 47, 0.25);
+      backdrop-filter: blur(12px) saturate(180%);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(100, 255, 218, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(100, 255, 218, 0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .hero-content h1 {
+      background: linear-gradient(135deg, #ffffff, var(--color-accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero-content p {
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      font-weight: 500;
+    }
+    
+    .hero-stats .stat-label {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content {
+        backdrop-filter: blur(8px) saturate(160%);
+        padding: 1.8rem 1.2rem;
+        margin: 1rem;
+        width: calc(100% - 2rem);
+      }
+      .hero::before {
+        background: rgba(2, 12, 27, 0.5);
+      }
+    }
+    
+    @media (prefers-reduced-transparency: reduce) {
+      .hero-content {
+        backdrop-filter: blur(4px);
+        background: rgba(10, 25, 47, 0.7);
+      }
+    }
+    
+    @supports not (backdrop-filter: blur(12px)) {
+      .hero-content {
+        background: rgba(10, 25, 47, 0.85);
+      }
+    }
+    
+    .section {
+      position: relative;
+      background: rgba(2, 12, 27, 0.65);
+      backdrop-filter: blur(2px);
+      padding: var(--section-spacing) 0;
+    }
+    
+    .gallery-section,
+    .team-section {
+      background: rgba(10, 25, 47, 0.7);
+      backdrop-filter: blur(4px);
+    }
+    
+    h1,
+    h2,
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+    
+    h1 {
+      font-size: clamp(2rem, 8vw, 4.2rem);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    
+    h2 {
+      font-size: clamp(1.6rem, 6vw, 3rem);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title {
+      display: inline-block;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: var(--color-accent);
+      border-radius: 3px;
+    }
+    
+    .section-title.center {
+      display: block;
+      text-align: center;
+    }
+    
+    .section-title.center::after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+    
+    p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+    }
+    
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    
+    a:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
+    }
+    
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    }
+    
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 25, 47, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      height: var(--header-height);
+      transition: all var(--transition-normal);
+    }
+    
+    .navbar.scrolled {
+      background: rgba(10, 25, 47, 0.97);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0 var(--container-padding);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo-icon {
+      font-size: 2rem;
+      filter: drop-shadow(0 0 6px var(--color-accent));
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-link {
+      color: var(--color-text-secondary);
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transition: width var(--transition-normal);
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--color-text);
+    }
+    
+    .nav-link.active::after,
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--color-text);
+      font-size: 1.8rem;
+      cursor: pointer;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 4vw, 3rem);
+      flex-wrap: wrap;
+      margin: 2.5rem 0 2rem;
+    }
+    
+    .stat-number {
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      font-weight: 800;
+      color: var(--color-accent);
+      font-family: 'Montserrat';
+      margin-bottom: 0.25rem;
+      text-shadow: 0 0 8px rgba(100, 255, 218, 0.5);
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+      min-height: 48px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: transparent;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(105deg, var(--color-accent), var(--color-accent-dark));
+      color: var(--color-primary);
+      box-shadow: 0 4px 12px rgba(100, 255, 218, 0.25);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(100, 255, 218, 0.5);
+      filter: brightness(1.05);
+    }
+    
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+    
+    .btn-secondary {
+      background: rgba(100, 255, 218, 0.08);
+      border: 1.5px solid var(--color-accent);
+      color: var(--color-accent);
+      backdrop-filter: blur(4px);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(100, 255, 218, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(100, 255, 218, 0.2);
+    }
+    
+    .btn-secondary:active {
+      transform: translateY(0);
+    }
+    
+    .btn-large {
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    
+    .social-link,
+    .member-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(17, 34, 64, 0.9);
+      color: var(--color-text);
+      font-size: 1.4rem;
+      transition: all 0.25s ease;
+      border: 1px solid var(--color-border);
+      backdrop-filter: blur(4px);
+    }
+    
+    .social-link:hover,
+    .member-social a:hover {
+      transform: translateY(-4px) scale(1.05);
+      border-color: var(--color-accent);
+      background: var(--color-accent);
+      color: var(--color-primary);
+      box-shadow: 0 6px 14px rgba(100, 255, 218, 0.3);
+    }
+    
+    .social-link[href*="vk.com"]:hover,
+    .member-social a[href*="vk.com"]:hover {
+      background: #0077ff;
+      border-color: #0077ff;
+      color: white;
+    }
+    
+    .social-link[href*="t.me"]:hover,
+    .member-social a[href*="t.me"]:hover {
+      background: #26a5e4;
+      border-color: #26a5e4;
+      color: white;
+    }
+    
+    .social-link[href*="github.com"]:hover,
+    .member-social a[href*="github.com"]:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #0a192f;
+    }
+    
+    .social-link[href*="youtube.com"]:hover {
+      background: #ff0000;
+      border-color: #ff0000;
+      color: white;
+    }
+    
+    .card {
+      background: var(--color-card);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--color-border);
+      transition: all var(--transition-normal);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-icon {
+      font-size: 2.5rem;
+      color: var(--color-accent);
+      margin-bottom: 1.2rem;
+    }
+    
+    @media (hover: hover) {
+      .card:hover {
+        transform: translateY(-6px);
+        border-color: var(--color-accent);
+        box-shadow: var(--shadow-lg), 0 0 0 1px rgba(100, 255, 218, 0.2);
+      }
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .gallery-item {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+      background: #0a1a2f;
+    }
+    
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.03);
+    }
+    
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(2, 12, 27, 0.96);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+    
+    .modal-overlay.active {
+      display: flex;
+    }
+    
+    .modal-content {
+      width: 90%;
+      max-width: 1100px;
+      max-height: 90vh;
+      background: var(--color-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .modal-image {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      background: #020c1b;
+    }
+    
+    .modal-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: var(--color-secondary);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .modal-nav {
+      display: flex;
+      gap: 0.8rem;
+    }
+    
+    .modal-close {
+      background: var(--color-accent);
+      color: var(--color-primary);
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    
+    .modal-close:hover {
+      transform: scale(1.02);
+      background: var(--color-accent-dark);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .team-member {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(10, 25, 47, 0.6);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      transition: all 0.2s;
+    }
+    
+    .member-name {
+      color: var(--color-accent);
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+    
+    .member-role {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+    
+    .member-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .beta-card {
+      background: linear-gradient(125deg, rgba(100, 255, 218, 0.1), rgba(17, 34, 64, 0.85));
+      border: 2px solid var(--color-accent);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+    
+    .beta-badge {
+      display: inline-block;
+      background: var(--color-accent);
+      color: var(--color-primary);
+      padding: 0.4rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .beta-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .beta-feature {
+      padding: 1.5rem;
+      background: rgba(100, 255, 218, 0.03);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+    }
+    
+    .beta-feature i {
+      font-size: 2rem;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+    
+    .download-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .download-card {
+      flex: 1;
+      min-width: 260px;
+      max-width: 360px;
+      text-align: center;
+      padding: 1.8rem;
+    }
+    
+    .download-card.featured {
+      border: 2px solid var(--color-accent);
+      position: relative;
+      background: rgba(100, 255, 218, 0.03);
+    }
+    
+    .download-card.featured::before {
+      content: '🔥 Популярное';
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--color-accent);
+      color: var(--color-primary);
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    
+    .download-info {
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+    }
+    
+    .footer {
+      background: rgba(10, 25, 47, 0.9);
+      backdrop-filter: blur(8px);
+      padding: 4rem 0 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      padding-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+    
+    .footer-links ul {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin: 0.5rem 0;
+    }
+    
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent), #ffffff);
+      z-index: 1001;
+      transition: width 0.05s linear;
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(10, 25, 47, 0.98);
+        backdrop-filter: blur(16px);
+        padding: 1.5rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-link {
+        white-space: normal;
+        width: 100%;
+        text-align: left;
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+      }
+      .btn-group {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+      .btn-group .btn {
+        width: 100%;
+      }
+      .download-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .beta-features {
+        grid-template-columns: 1fr;
+      }
+      .modal-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .stat-item {
+        flex: 0 0 calc(50% - 0.5rem);
+        text-align: center;
+      }
+      .beta-card {
+        padding: 1.5rem;
+      }
+      .member-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+      }
+      .hero-content {
+        padding: 1.2rem;
+      }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        max-width: 960px;
+      }
+      .grid-3 {
+        gap: 1.5rem;
+      }
+    }
+    
+    .fade-in {
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .mt-1 {
+      margin-top: 0.5rem;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
-    <div class="aurora-bg"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="aurora-bg"></div>
 
-    <header class="navbar" id="navbar">
-        <div class="container nav-container">
-            <div class="logo"><span class="logo-icon">🚛</span><span>UNR</span></div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню"><i class="fas fa-bars"></i></button>
-            <nav class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link active">Главная</a>
-                <a href="#gallery" class="nav-link">Галерея</a>
-                <a href="#features" class="nav-link">Особенности</a>
-                <a href="#team" class="nav-link">Команда</a>
-                <a href="#beta" class="nav-link">Бета-доступ</a>
-                <a href="#download" class="nav-link">Скачать</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Unknown Northern Russia</h1>
-                    <p class="hero-subtitle" style="font-size: clamp(1rem, 4vw, 1.5rem); margin-bottom: 1rem;">Исследуйте суровые просторы Русского Севера в Euro Truck Simulator 2</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">16+</div>
-                            <div class="stat-label">ГОРОДОВ</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">1:19</div>
-                            <div class="stat-label">МАСШТАБ</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">620+ км</div>
-                            <div class="stat-label">ДОРОГ</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">9+</div>
-                            <div class="stat-label">ГРУЗОВ</div>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <a href="#download" class="btn btn-primary btn-large"><i class="fas fa-download"></i> Скачать мод</a>
-                        <a href="#beta" class="btn btn-secondary btn-large"><i class="fas fa-star"></i> Бета-доступ</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery" class="section gallery-section">
-            <div class="container">
-                <h2 class="section-title center">Галерея Северной России</h2>
-                <p class="text-center mb-4">Кликните, чтобы открыть полноэкранный просмотр</p>
-                <div class="gallery-grid" id="galleryGrid">
-                    <div class="gallery-item" data-index="0" tabindex="0"><img class="gallery-img" src="/assets/screenshot1.png" alt="Скриншот 1" loading="lazy" onerror="this.src='https://placehold.co/600x400/112240/64ffda?text=UNR+1'"></div>
-                    <div class="gallery-item" data-index="1" tabindex="0"><img class="gallery-img" src="/assets/screenshot2.png" alt="Скриншот 2" loading="lazy" onerror="this.src='https://placehold.co/600x400/112240/64ffda?text=UNR+2'"></div>
-                    <div class="gallery-item" data-index="2" tabindex="0"><img class="gallery-img" src="/assets/screenshot3.png" alt="Скриншот 3" loading="lazy" onerror="this.src='https://placehold.co/600x400/112240/64ffda?text=UNR+3'"></div>
-                    <div class="gallery-item" data-index="3" tabindex="0"><img class="gallery-img" src="/assets/screenshot4.png" alt="Скриншот 4" loading="lazy" onerror="this.src='https://placehold.co/600x400/112240/64ffda?text=UNR+4'"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="section">
-            <div class="container">
-                <h2 class="section-title center">Особенности мода</h2>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <div class="card-icon">🗺️</div>
-                        <h3>Детализированная карта</h3>
-                        <p>Масштаб 1:19, проработанные города и уникальные ландшафты Русского Севера.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🏙️</div>
-                        <h3>Аутентичные города</h3>
-                        <p>16+ населённых пунктов с архитектурой и атмосферой северных регионов.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🚛</div>
-                        <h3>Уникальные грузы</h3>
-                        <p>Специализированные грузы: лес, руда, техника для суровых условий.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🛣️</div>
-                        <h3>Сложные трассы</h3>
-                        <p>Гравийные дороги, горные перевалы и ледяные участки.</p>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">⚙️</div>
-                        <h3>Постоянные обновления</h3>
-                        <p>Активная поддержка, новые города и улучшения каждый квартал.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="team" class="section team-section">
-            <div class="container">
-                <h2 class="section-title center">Наша команда</h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <h3 class="member-name">Максим Васильев</h3>
-                        <div class="member-role">Ведущий разработчик</div>
-                        <p class="member-description">Создатель карты, главный архитектор мира и координатор проекта.</p>
-                        <div class="member-social"><a href="https://vk.com/makson41ksss" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a></div>
-                    </div>
-                    <div class="team-member">
-                        <h3 class="member-name">Адриан Синько</h3>
-                        <div class="member-role">3D-моделлер</div>
-                        <p class="member-description">Уникальные здания, префабы и объекты окружения для северных регионов.</p>
-                        <div class="member-social"><a href="https://vk.com/dieselets" target="_blank"><i class="fab fa-vk"></i></a></div>
-                    </div>
-                    <div class="team-member">
-                        <h3 class="member-name">Максим Ледяев</h3>
-                        <div class="member-role">Веб-разработчик</div>
-                        <p class="member-description">Дизайн и разработка современного сайта, UI/UX оптимизация.</p>
-                        <div class="member-social"><a href="https://github.com/md-dog77" target="_blank"><i class="fab fa-github"></i></a><a href="https://t.me/HUANANZHI" target="_blank"><i class="fab fa-telegram"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="beta" class="section">
-            <div class="container">
-                <div class="beta-card">
-                    <span class="beta-badge">Бета-доступ через goga.zone</span>
-                    <h2>Станьте бета-тестером</h2>
-                    <p>Получите ранний доступ к новым городам, дорогам и эксклюзивному контенту</p>
-                    <div class="beta-features">
-                        <div class="beta-feature"><i class="fas fa-rocket"></i>
-                            <h4>Ранний доступ</h4>
-                            <p>Первыми тестируйте новые версии</p>
-                        </div>
-                        <div class="beta-feature"><i class="fas fa-crown"></i>
-                            <h4>Эксклюзивный контент</h4>
-                            <p>Закрытые превью и фиксы</p>
-                        </div>
-                        <div class="beta-feature"><i class="fas fa-headset"></i>
-                            <h4>Прямая поддержка</h4>
-                            <p>Общение с разработчиками</p>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary btn-large" onclick="window.open('https://goga.zone/u/unrmap','_blank')"><i class="fas fa-shopping-cart"></i> Приобрести доступ</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="download" class="section">
-            <div class="container">
-                <h2 class="section-title center">Скачать мод</h2>
-                <div class="download-grid">
-                    <div class="card download-card">
-                        <div class="card-icon">⬇️</div>
-                        <h3>Прямая загрузка</h3>
-                        <p>Стабильная версия с нашего сайта</p>
-                        <div class="download-info">
-                            <p><strong>Версия:</strong> 0.0.0</p>
-                            <p><strong>Размер:</strong> 0 ГБ</p>
-                            <p><strong>Обновлено:</strong> xx.xx.20xx</p>
-                        </div><a href="https://texrabotyyy.vercel.app/" class="btn btn-primary" target="_blank"><i class="fas fa-download"></i> Скачать сейчас</a>
-                    </div>
-                    <div class="card download-card featured">
-                        <div class="card-icon">🚛</div>
-                        <h3>TruckyMods</h3>
-                        <p>Официальная страница на портале</p>
-                        <div class="download-info">
-                            <p><strong>Рейтинг:</strong> ★★★★★ (4.9)</p>
-                            <p><strong>Отзывы:</strong> 0+</p>
-                            <p><strong>Загрузок:</strong> 0</p>
-                        </div><a href="https://texrabotyyy.vercel.app/" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> Перейти</a>
-                    </div>
-                    <div class="card download-card">
-                        <div class="card-icon">🗺️</div>
-                        <h3>STMods</h3>
-                        <p>Русскоязычное сообщество</p>
-                        <div class="download-info">
-                            <p><strong>Форум:</strong> Активный</p>
-                            <p><strong>Поддержка:</strong> RU/EN</p>
-                            <p><strong>Гайды:</strong> Есть</p>
-                        </div><a href="https://texrabotyyy.vercel.app/" class="btn btn-secondary" target="_blank"><i class="fas fa-external-link-alt"></i> Перейти</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <div class="footer-logo" style="font-size:1.8rem; font-weight:800;">UNR</div>
-                    <p class="footer-description">Неофициальная модификация для Euro Truck Simulator 2. Все права принадлежат их владельцам.</p>
-                    <div class="social-links"><a href="https://vk.com/unknownnorthernrussiaets2" class="social-link" target="_blank"><i class="fab fa-vk"></i></a><a href="https://t.me/unknownnorthernrussiaets2" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a><a href="https://texrabotyyy.vercel.app/" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a></div>
-                </div>
-                <div class="footer-links">
-                    <h4>Навигация</h4>
-                    <ul>
-                        <li><a href="#home">Главная</a></li>
-                        <li><a href="#download">Скачать</a></li>
-                        <li><a href="#beta">Бета-доступ</a></li>
-                        <li><a href="#features">Особенности</a></li>
-                        <li><a href="#team">Команда</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Контакты</h4>
-                    <ul>
-                        <li><a href="https://vk.com/makson41ksss">Написать вопрос</a></li>
-                        <li><a href="https://vk.com/im/convo/-230347624">Поддержка</a></li>
-                        <li><a href="mailto:northernrussiaunknown@gmail.com">Email</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Unknown Northern Russia [ETS2]. Все права защищены.</p>
-                <p class="mt-1">Версия 2.2</p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="modal-overlay" id="modalOverlay" hidden>
-        <div class="modal-content"><img src="" alt="" class="modal-image" id="modalImage">
-            <div class="modal-controls">
-                <div class="modal-nav"><button class="btn btn-secondary" id="modalPrev"><i class="fas fa-chevron-left"></i> Назад</button><button class="btn btn-secondary" id="modalNext">Вперед <i class="fas fa-chevron-right"></i></button></div><span id="modalCounter">1/4</span><button class="modal-close" id="modalClose"><i class="fas fa-times"></i> Закрыть</button>
-            </div>
-        </div>
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="logo"><span class="logo-icon">🚛</span><span>UNR</span></div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню"><i class="fas fa-bars"></i></button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Главная</a>
+        <a href="#gallery" class="nav-link">Галерея</a>
+        <a href="#features" class="nav-link">Особенности</a>
+        <a href="#team" class="nav-link">Команда</a>
+        <a href="#beta" class="nav-link">Бета-доступ</a>
+        <a href="#download" class="nav-link">Скачать</a>
+      </nav>
     </div>
+  </header>
 
-    <script>
-        (function() {
-            const navbar = document.getElementById('navbar');
-            const progress = document.getElementById('scrollProgress');
-            const mobileBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalImg = document.getElementById('modalImage');
-            const modalPrev = document.getElementById('modalPrev');
-            const modalNext = document.getElementById('modalNext');
-            const modalClose = document.getElementById('modalClose');
-            const modalCounter = document.getElementById('modalCounter');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            let images = Array.from(galleryItems).map(item => item.querySelector('img').src);
-            let currentIndex = 0;
+  <main>
 
-            function updateModal() {
-                modalImg.src = images[currentIndex];
-                modalCounter.innerText = `${currentIndex+1}/${images.length}`;
-            }
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Unknown Northern Russia</h1>
+          <p class="hero-subtitle" style="font-size: clamp(1rem, 4vw, 1.5rem); margin-bottom: 1rem;">Исследуйте суровые просторы Русского Севера в Euro Truck Simulator 2</p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">16+</div>
+              <div class="stat-label">ГОРОДОВ</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">1:19</div>
+              <div class="stat-label">МАСШТАБ</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">620+ км</div>
+              <div class="stat-label">ДОРОГ</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">9+</div>
+              <div class="stat-label">ГРУЗОВ</div>
+            </div>
+          </div>
+          <div class="btn-group">
+            <a href="#download" class="btn btn-primary btn-large"><i class="fas fa-download"></i> Скачать мод</a>
+            <a href="#beta" class="btn btn-secondary btn-large"><i class="fas fa-star"></i> Бета-доступ</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            function openModal(idx) {
-                currentIndex = idx;
-                updateModal();
-                modalOverlay.classList.add('active');
-                modalOverlay.hidden = false;
-                document.body.style.overflow = 'hidden';
-            }
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <h2 class="section-title center">Галерея Северной России</h2>
+        <p class="text-center mb-4">Кликните, чтобы открыть полноэкранный просмотр</p>
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item" data-index="0" tabindex="0"><img class="gallery-img" src="/assets/screenshot1.png" alt="Скриншот 1" loading="lazy" onerror="this.src='https://placehold.co/600x400/112240/64ffda?text=UNR+1'"></div>
+          <div class="gallery-item" data-index="1" tabindex="0"><img class="gallery-img" src="/assets/screenshot2.png" alt="Скриншот 2" loading="lazy" onerror="this.src='https://placehold.co/600x400/112240/64ffda?text=UNR+2'"></div>
+          <div class="gallery-item" data-index="2" tabindex="0"><img class="gallery-img" src="/assets/screenshot3.png" alt="Скриншот 3" loading="lazy" onerror="this.src='https://placehold.co/600x400/112240/64ffda?text=UNR+3'"></div>
+          <div class="gallery-item" data-index="3" tabindex="0"><img class="gallery-img" src="/assets/screenshot4.png" alt="Скриншот 4" loading="lazy" onerror="this.src='https://placehold.co/600x400/112240/64ffda?text=UNR+4'"></div>
+        </div>
+      </div>
+    </section>
 
-            function closeModal() {
-                modalOverlay.classList.remove('active');
-                modalOverlay.hidden = true;
-                document.body.style.overflow = '';
-            }
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title center">Особенности мода</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="card-icon">🗺️</div>
+            <h3>Детализированная карта</h3>
+            <p>Масштаб 1:19, проработанные города и уникальные ландшафты Русского Севера.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🏙️</div>
+            <h3>Аутентичные города</h3>
+            <p>16+ населённых пунктов с архитектурой и атмосферой северных регионов.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🚛</div>
+            <h3>Уникальные грузы</h3>
+            <p>Специализированные грузы: лес, руда, техника для суровых условий.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🛣️</div>
+            <h3>Сложные трассы</h3>
+            <p>Гравийные дороги, горные перевалы и ледяные участки.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Постоянные обновления</h3>
+            <p>Активная поддержка, новые города и улучшения каждый квартал.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            function nextImage() {
-                currentIndex = (currentIndex + 1) % images.length;
-                updateModal();
-            }
+    <section id="team" class="section team-section">
+      <div class="container">
+        <h2 class="section-title center">Наша команда</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <h3 class="member-name">Максим Васильев</h3>
+            <div class="member-role">Ведущий разработчик</div>
+            <p class="member-description">Создатель карты, главный архитектор мира и координатор проекта.</p>
+            <div class="member-social"><a href="https://vk.com/makson41ksss" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a></div>
+          </div>
+          <div class="team-member">
+            <h3 class="member-name">Адриан Синько</h3>
+            <div class="member-role">3D-моделлер</div>
+            <p class="member-description">Уникальные здания, префабы и объекты окружения для северных регионов.</p>
+            <div class="member-social"><a href="https://vk.com/dieselets" target="_blank"><i class="fab fa-vk"></i></a></div>
+          </div>
+          <div class="team-member">
+            <h3 class="member-name">Артём Пастернак</h3>
+            <div class="member-role">Второй разработчик</div>
+            <p class="member-description">разработчик карты UNR. Помощь с любыми возникающими недочётами.</p>
+            <div class="member-social"><a href="https://vk.com/hantovich" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a></div>
+          </div>
+          <div class="team-member">
+            <h3 class="member-name">Максим Ледяев</h3>
+            <div class="member-role">Веб-разработчик</div>
+            <p class="member-description">Дизайн и разработка современного сайта, UI/UX оптимизация.</p>
+            <div class="member-social"><a href="https://github.com/md-dog77" target="_blank"><i class="fab fa-github"></i></a><a href="https://t.me/HUANANZHI" target="_blank"><i class="fab fa-telegram"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            function prevImage() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                updateModal();
-            }
+    <section id="beta" class="section">
+      <div class="container">
+        <div class="beta-card">
+          <span class="beta-badge">Бета-доступ через goga.zone</span>
+          <h2>Станьте бета-тестером</h2>
+          <p>Получите ранний доступ к новым городам, дорогам и эксклюзивному контенту</p>
+          <div class="beta-features">
+            <div class="beta-feature"><i class="fas fa-rocket"></i>
+              <h4>Ранний доступ</h4>
+              <p>Первыми тестируйте новые версии</p>
+            </div>
+            <div class="beta-feature"><i class="fas fa-crown"></i>
+              <h4>Эксклюзивный контент</h4>
+              <p>Закрытые превью и фиксы</p>
+            </div>
+            <div class="beta-feature"><i class="fas fa-headset"></i>
+              <h4>Прямая поддержка</h4>
+              <p>Общение с разработчиками</p>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-large" onclick="window.open('https://goga.zone/u/unrmap','_blank')"><i class="fas fa-shopping-cart"></i> Приобрести доступ</button>
+        </div>
+      </div>
+    </section>
 
-            galleryItems.forEach((item, i) => {
-                item.addEventListener('click', () => openModal(i));
-                item.addEventListener('keydown', e => {
-                    if (e.key === 'Enter') openModal(i);
-                });
+    <section id="download" class="section">
+      <div class="container">
+        <h2 class="section-title center">Скачать мод</h2>
+        <div class="download-grid">
+          <div class="card download-card">
+            <div class="card-icon">⬇️</div>
+            <h3>Прямая загрузка</h3>
+            <p>Стабильная версия с нашего сайта</p>
+            <div class="download-info">
+              <p><strong>Версия:</strong> 0.0.0</p>
+              <p><strong>Размер:</strong> 0 ГБ</p>
+              <p><strong>Обновлено:</strong> xx.xx.20xx</p>
+            </div><a href="https://texrabotyyy.vercel.app/" class="btn btn-primary" target="_blank"><i class="fas fa-download"></i> Скачать сейчас</a>
+          </div>
+          <div class="card download-card featured">
+            <div class="card-icon">🚛</div>
+            <h3>TruckyMods</h3>
+            <p>Официальная страница на портале</p>
+            <div class="download-info">
+              <p><strong>Рейтинг:</strong> ★★★★★ (4.9)</p>
+              <p><strong>Отзывы:</strong> 0+</p>
+              <p><strong>Загрузок:</strong> 0</p>
+            </div><a href="https://texrabotyyy.vercel.app/" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> Перейти</a>
+          </div>
+          <div class="card download-card">
+            <div class="card-icon">🗺️</div>
+            <h3>STMods</h3>
+            <p>Русскоязычное сообщество</p>
+            <div class="download-info">
+              <p><strong>Форум:</strong> Активный</p>
+              <p><strong>Поддержка:</strong> RU/EN</p>
+              <p><strong>Гайды:</strong> Есть</p>
+            </div><a href="https://texrabotyyy.vercel.app/" class="btn btn-secondary" target="_blank"><i class="fas fa-external-link-alt"></i> Перейти</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo" style="font-size:1.8rem; font-weight:800;">UNR</div>
+          <p class="footer-description">Неофициальная модификация для Euro Truck Simulator 2. Все права принадлежат их владельцам.</p>
+          <div class="social-links"><a href="https://vk.com/unknownnorthernrussiaets2" class="social-link" target="_blank"><i class="fab fa-vk"></i></a><a href="https://t.me/unknownnorthernrussiaets2" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a><a href="https://texrabotyyy.vercel.app/" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a></div>
+        </div>
+        <div class="footer-links">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#download">Скачать</a></li>
+            <li><a href="#beta">Бета-доступ</a></li>
+            <li><a href="#features">Особенности</a></li>
+            <li><a href="#team">Команда</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Контакты</h4>
+          <ul>
+            <li><a href="https://vk.com/makson41ksss">Написать вопрос</a></li>
+            <li><a href="https://vk.com/im/convo/-230347624">Поддержка</a></li>
+            <li><a href="mailto:northernrussiaunknown@gmail.com">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Unknown Northern Russia [ETS2]. Все права защищены.</p>
+        <p class="mt-1">Версия 2.2</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal-content"><img src="" alt="" class="modal-image" id="modalImage">
+      <div class="modal-controls">
+        <div class="modal-nav">
+          <button class="btn btn-secondary" id="modalPrev"><i class="fas fa-chevron-left"></i> Назад</button>
+          <button class="btn btn-secondary" id="modalNext">Вперед <i class="fas fa-chevron-right"></i></button>
+        </div><span id="modalCounter">1/4</span>
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i> Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const navbar = document.getElementById('navbar');
+      const progress = document.getElementById('scrollProgress');
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const modalOverlay = document.getElementById('modalOverlay');
+      const modalImg = document.getElementById('modalImage');
+      const modalPrev = document.getElementById('modalPrev');
+      const modalNext = document.getElementById('modalNext');
+      const modalClose = document.getElementById('modalClose');
+      const modalCounter = document.getElementById('modalCounter');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      let images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+      let currentIndex = 0;
+
+      function updateModal() {
+        modalImg.src = images[currentIndex];
+        modalCounter.innerText = `${currentIndex+1}/${images.length}`;
+      }
+
+      function openModal(idx) {
+        currentIndex = idx;
+        updateModal();
+        modalOverlay.classList.add('active');
+        modalOverlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove('active');
+        modalOverlay.hidden = true;
+        document.body.style.overflow = '';
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateModal();
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateModal();
+      }
+      galleryItems.forEach((item, i) => {
+        item.addEventListener('click', () => openModal(i));
+        item.addEventListener('keydown', e => {
+          if (e.key === 'Enter') openModal(i);
+        });
+      });
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+      if (modalNext) modalNext.addEventListener('click', nextImage);
+      if (modalPrev) modalPrev.addEventListener('click', prevImage);
+      document.addEventListener('keydown', e => {
+        if (modalOverlay && modalOverlay.classList.contains('active')) {
+          if (e.key === 'Escape') closeModal();
+          if (e.key === 'ArrowRight') nextImage();
+          if (e.key === 'ArrowLeft') prevImage();
+        }
+      });
+      if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          mobileBtn.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+      }
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        });
+      });
+      window.addEventListener('scroll', () => {
+        let winScroll = document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - window.innerHeight;
+        if (progress) progress.style.width = (winScroll / height) * 100 + '%';
+        if (navbar) navbar.classList.toggle('scrolled', winScroll > 20);
+        let sections = document.querySelectorAll('section[id]');
+        let scrollPos = window.scrollY + (navbar ? navbar.offsetHeight : 70) + 30;
+        let current = '';
+        sections.forEach(section => {
+          if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) current = section.getAttribute('id');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+        });
+      });
+      document.querySelectorAll('.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - (navbar ? navbar.offsetHeight : 70),
+              behavior: 'smooth'
             });
-            if (modalClose) modalClose.addEventListener('click', closeModal);
-            if (modalNext) modalNext.addEventListener('click', nextImage);
-            if (modalPrev) modalPrev.addEventListener('click', prevImage);
-            document.addEventListener('keydown', e => {
-                if (modalOverlay && modalOverlay.classList.contains('active')) {
-                    if (e.key === 'Escape') closeModal();
-                    if (e.key === 'ArrowRight') nextImage();
-                    if (e.key === 'ArrowLeft') prevImage();
-                }
-            });
-
-            if (mobileBtn) {
-                mobileBtn.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                    mobileBtn.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-                });
-            }
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                });
-            });
-
-            window.addEventListener('scroll', () => {
-                let winScroll = document.documentElement.scrollTop;
-                let height = document.documentElement.scrollHeight - window.innerHeight;
-                if (progress) progress.style.width = (winScroll / height) * 100 + '%';
-                if (navbar) navbar.classList.toggle('scrolled', winScroll > 20);
-                let sections = document.querySelectorAll('section[id]');
-                let scrollPos = window.scrollY + (navbar ? navbar.offsetHeight : 70) + 30;
-                let current = '';
-                sections.forEach(section => {
-                    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) current = section.getAttribute('id');
-                });
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
-                });
-            });
-
-            document.querySelectorAll('.nav-link').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - (navbar ? navbar.offsetHeight : 70),
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        })();
-    </script>
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>
